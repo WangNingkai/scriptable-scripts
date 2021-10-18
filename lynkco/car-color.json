@@ -5,7 +5,8 @@
             "white": "https://ossdopimg.lynkco.com/2020101614531456660576.png?x-oss-process=image/crop,x_120,w_512,h_300",
             "red": "https://ossdopimg.lynkco.com/2020101614534839363042.png?x-oss-process=image/crop,x_120,w_512,h_300",
             "grey": "https://ossdopimg.lynkco.com/2020102015220081547356.png?x-oss-process=image/crop,x_120,w_512,h_300",
-            "blue": "https://ossdopimg.lynkco.com/2020111721123340311409.png?x-oss-process=image/crop,x_120,w_512,h_300"
+            "blue": "https://ossdopimg.lynkco.com/2020111721123340311409.png?x-oss-process=image/crop,x_120,w_512,h_300",
+            "purple": "https://ossdopimg.lynkco.com/2020101615412237118494.png?x-oss-process=image/crop,x_120,w_512,h_300"
         },
         "02": {
             "grey": "https://ossdopimg.lynkco.com/2021071200355886156937.png?x-oss-process=image/crop,x_80,y_15,w_600,h_260",
@@ -30,6 +31,7 @@
             "white": "https://ossdopimg.lynkco.com/2020032509220562914986.png?x-oss-process=image/crop,x_120,w_512,h_300",
             "grey": "https://ossdopimg.lynkco.com/2020032509260857832368.png?x-oss-process=image/crop,x_120,w_512,h_300",
             "black": "https://ossdopimg.lynkco.com/2020032509285217020474.png?x-oss-process=image/crop,x_120,w_512,h_300",
+            "purple": "https://ossdopimg.lynkco.com/2021041314033154940380.png?x-oss-process=image/crop,x_140,w_450,h_280",
             "white_yellow": "https://ossdopimg.lynkco.com/2021100418300355051757.png?x-oss-process=image/crop,x_100,w_540,h_280",
             "grey_yellow": "https://ossdopimg.lynkco.com/2021100418302535066589.png?x-oss-process=image/crop,x_100,w_540,h_280",
             "black_yellow": "https://ossdopimg.lynkco.com/2021100418300355051757.png?x-oss-process=image/crop,x_100,w_540,h_280"
