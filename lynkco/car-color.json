@@ -11,7 +11,7 @@
         "02": {
             "grey": "https://ossdopimg.lynkco.com/2021071200355886156937.png?x-oss-process=image/crop,x_80,y_15,w_600,h_260",
             "purple": "https://ossdopimg.lynkco.com/2021063016533704479247.png?x-oss-process=image/crop,x_80,y_10,w_600,h_260",
-            "blue": "https://gitee.com/wangningkai/scriptable-scripts/blob/master/lynkco/02/blue.png"
+            "blue": "https://gitee.com/wangningkai/scriptable-scripts/raw/master/lynkco/02/blue.png"
         },
         "02hb": {
             "black": "https://ossdopimg.lynkco.com/2021061808462780056906.png?x-oss-process=image/crop,x_120,y_30,w_520,h_220",
