@@ -1,3 +1,3 @@
-# LynkCo Scriptable Widgets
+# 「小件件」领克出行
 
 > 领克汽车自定义桌面组件.

@@ -13,6 +13,8 @@
 
 或者 `Safari` 浏览器打开此页面 [点击此处](scriptable:///add?scriptName=hello) 跳转添加脚本。
 
+2.0版本
+
 ```js
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
 await Promise.all(
@@ -25,6 +27,23 @@ await Promise.all(
 FILE_MGR.remove(module.filename);
 Safari.open(
     'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」领克出行2.0')
+);
+```
+
+初始版本
+
+```js
+const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
+await Promise.all(
+    ['「小件件」领克出行.js'].map(async (js) => {
+        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/lynkco.js');
+        const RES = await REQ.load();
+        FILE_MGR.write(FILE_MGR.joinPath(FILE_MGR.documentsDirectory(), js), RES);
+    })
+);
+FILE_MGR.remove(module.filename);
+Safari.open(
+    'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」领克出行')
 );
 ```
 
