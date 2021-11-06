@@ -21,5 +21,15 @@ A: 在输入账号密码的下一步输入车架号绑定你要显示的车辆
 
 收到新版本推送后打开 `Scriptable` 点击检查更新  - 开始下载。
 
+**Q: 定位不显示**
+
+检查是否自定义车辆配置中最后一项高德地图API_KEY是否调整，这里不建议修改。
+
+默认高德KEY：697285d0ae3d6b7f993e313934e872be 
+
+默认提供的KEY有一定的使用限制，建议自行申请，防止失效！
+
+申请流程 ：[https://lbs.amap.com/api/webservice/guide/create-project/get-key](https://lbs.amap.com/api/webservice/guide/create-project/get-key)
+
 
 
