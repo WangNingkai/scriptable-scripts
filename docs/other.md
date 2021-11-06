@@ -34,5 +34,8 @@ Cyan logo
 白色
 [https://z3.ax1x.com/2021/11/06/IKLz9g.png](https://z3.ax1x.com/2021/11/06/IKLz9g.png)
 
+透明logo
+[https://z3.ax1x.com/2021/11/04/ImhmwR.png](https://z3.ax1x.com/2021/11/04/ImhmwR.png)
+
 
 
