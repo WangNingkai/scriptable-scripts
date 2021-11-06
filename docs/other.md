@@ -14,7 +14,7 @@
 
 ### 自定义图片
 
-> 自定义资源：
+**自定义资源：**
 
 （复制的时候注意网址后前后不要有空格，否则车辆会变红块块）
 
@@ -24,5 +24,15 @@ Cyan logo
 
 领克标志logo
 
-
 [https://z3.ax1x.com/2021/11/05/In8DG8.png](https://z3.ax1x.com/2021/11/05/In8DG8.png)
+
+领克字体logo
+
+灰色
+[https://z3.ax1x.com/2021/11/06/IKOS3Q.png](https://z3.ax1x.com/2021/11/06/IKOS3Q.png)
+
+白色
+[https://z3.ax1x.com/2021/11/06/IKLz9g.png](https://z3.ax1x.com/2021/11/06/IKLz9g.png)
+
+
+
