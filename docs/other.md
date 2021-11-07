@@ -2,7 +2,7 @@
 
 ### 快捷指令
 
-小组件可以搭配快捷指令或 `Siri`，实现诸如启动车辆、解锁车辆等操作。
+小组件可以搭配快捷指令或 `Siri`，实现诸如启动车辆、解锁车辆等操作。(使用快捷指令切勿修改脚本名称，保持  `「小件件」领克出行2.0` ，否则无法使用。)
 
 - 解锁 [https://www.icloud.com/shortcuts/16bfec9fa3c14a5db4173c391df83225](https://www.icloud.com/shortcuts/16bfec9fa3c14a5db4173c391df83225)
 
@@ -11,6 +11,9 @@
 - 启动 [https://www.icloud.com/shortcuts/fc2683dfcd33412aaf9aeb237f35f796](https://www.icloud.com/shortcuts/fc2683dfcd33412aaf9aeb237f35f796)
 
 - 熄火 [https://www.icloud.com/shortcuts/3366fb4686624cbd8c2f37e9954fe752](https://www.icloud.com/shortcuts/3366fb4686624cbd8c2f37e9954fe752)
+
+- 闪灯鸣笛 [https://www.icloud.com/shortcuts/1cd0fd4f24c74bd0a73e9749049a6de9](https://www.icloud.com/shortcuts/1cd0fd4f24c74bd0a73e9749049a6de9)
+
 
 ### 自定义图片
 
@@ -29,12 +32,15 @@ Cyan logo
 领克字体logo
 
 灰色
+
 [https://z3.ax1x.com/2021/11/06/IKOS3Q.png](https://z3.ax1x.com/2021/11/06/IKOS3Q.png)
 
 白色
+
 [https://z3.ax1x.com/2021/11/06/IKLz9g.png](https://z3.ax1x.com/2021/11/06/IKLz9g.png)
 
 透明logo
+
 [https://z3.ax1x.com/2021/11/04/ImhmwR.png](https://z3.ax1x.com/2021/11/04/ImhmwR.png)
 
 
