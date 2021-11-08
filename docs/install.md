@@ -1,6 +1,8 @@
 
 # 安装部署
 
+**<span style="color:red">11月9日前安装的脚本，由于脚本时间出现问题，会出现更新异常问题，建议删除脚本重新拉取！！！</span>**
+
 ### 1. 下载Scriptable
 
 下载安装 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) 软件
@@ -30,7 +32,7 @@ Safari.open(
 );
 ```
 
-初始版本
+1.0版本 （默认带小地图）
 
 ```js
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
