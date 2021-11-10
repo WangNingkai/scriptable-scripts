@@ -14,7 +14,7 @@
 
 手动复制下面代码，返回桌面打开 `Scriptable` 点击右上角 `「+」`，粘贴代码，点击右下角三角形运行。
 
-或者 `Safari` 浏览器打开此页面 [点击此处](scriptable:///add?scriptName=hello) 跳转添加脚本。
+或者复制下面代码使用 `Safari` 浏览器打开此页面 [点击此处](scriptable:///add?scriptName=hello) 跳转添加脚本。
 
 ![I9pswE.md.png](https://s6.jpg.cm/2021/11/10/I9pswE.md.png)
 
