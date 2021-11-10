@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.0.5",
-    "WIDGET_BUILD": "2021110801",
+    "WIDGET_VERSION": "v2.0.6",
+    "WIDGET_BUILD": "2021111001",
     "CHANGELOG": "1.优化密钥刷新问题\n\r\n2. 添加部分车型默认图片"
 }
