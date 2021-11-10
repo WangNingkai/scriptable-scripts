@@ -33,7 +33,7 @@ A: 配置项空白，建议不要随便修改配置，等待稍后重试，出�
 
 默认提供的KEY有一定的使用限制，建议自行申请，防止失效！
 
-申请流程 ：[https://lbs.amap.com/api/webservice/guide/create-project/get-key](https://lbs.amap.com/api/webservice/guide/create-project/get-key)
+**申请流程：**[https://lbs.amap.com/api/webservice/guide/create-project/get-key](https://lbs.amap.com/api/webservice/guide/create-project/get-key)
 
 **Q: 快捷操作提示令牌失效**
 
