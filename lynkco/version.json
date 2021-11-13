@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.0.7",
-    "WIDGET_BUILD": "2021111201",
-    "CHANGELOG": "1.优化高德KEY过期问题\n2. 添加部分车型默认图片\n3. 添加地图、缓存自定义"
+    "WIDGET_VERSION": "v2.0.8",
+    "WIDGET_BUILD": "2021111301",
+    "CHANGELOG": "1.优化地图刷新问题\n2. 添加退出登录功能"
 }
