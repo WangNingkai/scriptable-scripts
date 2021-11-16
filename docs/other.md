@@ -48,5 +48,47 @@ Cyan logo
 
 [https://s6.jpg.cm/2021/11/11/I9iNct.png](https://s6.jpg.cm/2021/11/11/I9iNct.png)
 
+MINI EV敞篷版
+
+```
+#B1D3FF
+
+#FFD2CF
+
+#1C2D45
+```
+
+[https://z3.ax1x.com/2021/11/04/ImIx3V.png](https://z3.ax1x.com/2021/11/04/ImIx3V.png)
+
+
+
+BMW Isetta
+
+```
+#B3C99A
+
+#FFE9D8
+
+#1B3826
+```
+
+[https://z3.ax1x.com/2021/11/04/Im2Lz4.png](https://z3.ax1x.com/2021/11/04/Im2Lz4.png)
+
+
+
+
+可爱摇摇马
+
+```
+#FED1D1
+
+#FFF9F4
+
+#551511
+```
+
+[https://z3.ax1x.com/2021/11/04/Im4MHs.png](https://z3.ax1x.com/2021/11/04/Im4MHs.png)
+
+
 
 
