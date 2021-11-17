@@ -2,7 +2,7 @@
 
 ### 快捷指令
 
-小组件可以搭配快捷指令或 `Siri`，实现诸如启动车辆、解锁车辆等操作。(使用快捷指令切勿修改脚本名称，保持  `「小件件」领克出行2.0` ，否则无法使用。)
+小组件可以搭配快捷指令或 `Siri`，实现诸如启动车辆、解锁车辆等操作。(使用快捷指令切勿修改脚本名称，保持  `「小件件」领克出行2.0` 或 `「小件件」领克出行` ，否则无法使用。)
 
 - 解锁 [https://www.icloud.com/shortcuts/16bfec9fa3c14a5db4173c391df83225](https://www.icloud.com/shortcuts/16bfec9fa3c14a5db4173c391df83225)
 
@@ -13,6 +13,11 @@
 - 熄火 [https://www.icloud.com/shortcuts/3366fb4686624cbd8c2f37e9954fe752](https://www.icloud.com/shortcuts/3366fb4686624cbd8c2f37e9954fe752)
 
 - 闪灯鸣笛 [https://www.icloud.com/shortcuts/1cd0fd4f24c74bd0a73e9749049a6de9](https://www.icloud.com/shortcuts/1cd0fd4f24c74bd0a73e9749049a6de9)
+
+**注意：** 如果运行指令提示找不到指令，请先修改快捷指令，指定相关脚本，选择 `Run` 后的脚本为当前使用的脚本~
+
+
+![修改指令](https://s6.jpg.cm/2021/11/17/IxosF6.png)
 
 
 ### 自定义图片

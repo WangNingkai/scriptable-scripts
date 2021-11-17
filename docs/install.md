@@ -18,7 +18,9 @@
 
 ![I9pswE.md.png](https://s6.jpg.cm/2021/11/10/I9pswE.md.png)
 
-**2.0版本**
+---
+
+#### 2.0版本  `「小件件」领克出行2.0` 
 
 ```js
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
@@ -37,7 +39,7 @@ Safari.open(
 
 --- 
 
-**1.0版本 （默认带小地图）**
+####  1.0版本 （默认带小地图）  `「小件件」领克出行` 
 
 ```js
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
@@ -54,11 +56,14 @@ Safari.open(
 );
 ```
 
+---
+
+![版本展示图](https://s6.jpg.cm/2021/11/17/Ixok5E.png)
 
 
 ### 3.配置账号
 
-点击 `「小件件」领克出行2.0`  选择 `配置组件` 进行配置，账号、密码必填，其他可不填，默认读取车辆数据
+点击 `「小件件」领克出行2.0` 或 `「小件件」领克出行`  选择 `配置组件` 进行配置，账号、密码必填，其他可不填，默认读取车辆数据
 
 
 ![I9pmES.md.png](https://s6.jpg.cm/2021/11/10/I9pmES.png)
@@ -91,7 +96,7 @@ Safari.open(
 
 - 搜 `Scriptable`，添加完在图标抖动编辑状态下，单击刚添加的组件。
 
-- `Script` 选择你刚新建的 `「小件件」领克出行2.0`。完成。
+- `Script` 选择你刚新建的 `「小件件」领克出行2.0` 或 `「小件件」领克出行` 。完成。
 
 如果没刷新 就再走一下 `「步骤3」`重新配置。
 
