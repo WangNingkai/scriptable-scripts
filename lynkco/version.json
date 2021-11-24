@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.0.10",
-    "WIDGET_BUILD": "2021111303",
-    "CHANGELOG": "1.优化布局显示\n2.添加兼容部分车辆图片"
+    "WIDGET_VERSION": "v2.0.11",
+    "WIDGET_BUILD": "2021112401",
+    "CHANGELOG": "1.分离菜单列表\n2.添加兼容部分车辆图片\n3.添加密码修改重置"
 }
