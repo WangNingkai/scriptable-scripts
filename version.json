@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.1",
-    "WIDGET_BUILD": "2021112301",
-    "CHANGELOG": "1.添加自定义车牌配置"
+    "WIDGET_VERSION": "v1.0.2",
+    "WIDGET_BUILD": "2021113001",
+    "CHANGELOG": "1.优化多辆领克数据混乱问题\n2.添加兼容部分车辆图片\n3.优化菜单显示\n4.优化代码"
 }
