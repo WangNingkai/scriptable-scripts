@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.0",
-    "WIDGET_BUILD": "20211201",
-    "CHANGELOG": "1.添加zeekr001车辆支持"
+    "WIDGET_VERSION": "v1.0.1",
+    "WIDGET_BUILD": "2021120701",
+    "CHANGELOG": "1.修复更新异常问题"
 }
