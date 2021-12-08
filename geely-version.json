@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.0",
-    "WIDGET_BUILD": "2021111701",
-    "CHANGELOG": "1.添加自定义配置"
+    "WIDGET_VERSION": "v1.0.1",
+    "WIDGET_BUILD": "2021120101",
+    "CHANGELOG": "1.添加自定义配置 \n 2.优化代码 3.同步领克出行接口"
 }
