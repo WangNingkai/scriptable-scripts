@@ -125,15 +125,15 @@ class Base {
 
   /**
    * 时间转换
-   * @param {*} date 
+   * @param {*} ts 
    * @param {*} formatter 
    * @returns 
    */
-  dateFormat(date,formatter = 'yyyy-MM-dd HH:mm') {
-    let date = new Date(date);
+  dateFormat(ts,formatter = 'yyyy-MM-dd HH:mm') {
+    let date = new Date(ts);
     let dateFormatter = new DateFormatter();
     dateFormatter.dateFormat = formatter;
-    let dateStr = dateFormatter.string(lastUpdated);
+    let dateStr = dateFormatter.string(date);
 
     return dateStr;
   }
@@ -401,19 +401,19 @@ const Running = async (Widget, default_args = "") => {
     Script.setWidget(W)
     Script.complete()
   } else if (config.runsWithSiri) {
-    act = args.shortcutParameter.act
+    act = args.shortcutParameter.act
     if (typeof act !== "undefined" && act) {
       M = new Widget()
       M.init()
       let _tmp = act.split('-').map(_ => _[0].toUpperCase() + _.substr(1)).join('')
-      let _act = `action${_tmp}`
-      if (M[_act] && typeof M[_act] === 'function') {
-        const func = M[_act].bind(M)
+      let _act = `action${_tmp}`
+      if (M[_act] && typeof M[_act] === 'function') {
+        const func = M[_act].bind(M)
         await func()
       }
     }
     Script.complete()
-  } else {
+  } else {
     let { act, data, __arg, __size } = args.queryParameters
     M = new Widget(__arg || default_args || '')
     if (__size) M.init(__size)
