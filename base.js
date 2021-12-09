@@ -154,7 +154,7 @@ class Base {
       ...headers,
     };
     // @ts-ignore
-    if (!this.empty(body) || body) {
+    if (body) {
       request.body = body;
     }
     // @ts-ignore
