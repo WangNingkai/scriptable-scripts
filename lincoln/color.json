@@ -2,6 +2,21 @@
     "car": {
         "nautilus": {
             "default": "https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/nautilus2021.png"
+        },
+        "aviator": {
+            "default": "https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/2021aviator.jpg"
+        },
+        "corsair": {
+            "default": "https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/2022corsair-v2.png"
+        },
+        "continental": {
+            "default": "https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/continental.jpg"
+        },
+        "navigator": {
+            "default": "https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/navigator2020.jpg"
+        },
+        "zephyr": {
+            "default": "https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/zephyr-pc.png"
         }
     }
 }
