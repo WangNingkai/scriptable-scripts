@@ -143,7 +143,7 @@ class Base {
    * @param {*} param0 request信息
    * @param {*} callback 回调返回response和JSON对象
    */
-  async request({ method, url,  headers = {}, body, json = true }, callback = () => {}) {
+  async request({ method, url,  headers = {}, body = null, json = true }, callback = () => {}) {
     const request = new Request('');
     // @ts-ignore
     request.url = url;
@@ -154,7 +154,7 @@ class Base {
       ...headers,
     };
     // @ts-ignore
-    if (!this.empty(body)) {
+    if (!this.empty(body) || body) {
       request.body = body;
     }
     // @ts-ignore
