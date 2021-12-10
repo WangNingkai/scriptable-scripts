@@ -5,6 +5,84 @@
             "black": "https://s1.ax1x.com/2021/12/10/o5oJTe.png",
             "white": "https://s1.ax1x.com/2021/12/10/o5oJTe.png",
             "red": "https://s1.ax1x.com/2021/12/10/o5oJTe.png"
+        },
+        "territory": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "evos": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "focus": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "equator": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "edge": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "everest": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "explorer": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "escort": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "mondeo": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "taurus": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "mustang": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "150": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
+        },
+        "tourneo": {
+            "default": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "black": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "white": "https://s1.ax1x.com/2021/12/10/o5L2hF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o5L2hF.png"
         }
     }
 }
