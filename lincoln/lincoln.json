@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.2",
-    "WIDGET_BUILD": "2021121001",
-    "CHANGELOG": "1.添加部分车型图片支持\n2.添加远程操作指令\n3.修复组件弹框bug"
+    "WIDGET_VERSION": "v1.0.3",
+    "WIDGET_BUILD": "2021121002",
+    "CHANGELOG": "1.修复GPS定位异常问题\n2.修复远程操作指令bug"
 }
