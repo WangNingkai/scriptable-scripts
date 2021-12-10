@@ -4,37 +4,43 @@
             "default": "https://s1.ax1x.com/2021/12/09/o4Gtb9.png",
             "blue": "https://s1.ax1x.com/2021/12/09/o4GuEn.png",
             "black": "https://s1.ax1x.com/2021/12/09/o4Gtb9.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4GB8K.png"
+            "white": "https://s1.ax1x.com/2021/12/09/o4GB8K.png",
+            "red": "https://s1.ax1x.com/2021/12/09/o4GB8K.png"
         },
         "aviator": {
             "default": "https://s1.ax1x.com/2021/12/09/o4GO5q.png",
             "blue": "https://s1.ax1x.com/2021/12/09/o4GW5t.png",
             "black": "https://s1.ax1x.com/2021/12/09/o4GO5q.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4GIxS.png"
+            "white": "https://s1.ax1x.com/2021/12/09/o4GIxS.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o4jRPO.png"
         },
         "nautilus": {
             "default": "https://s1.ax1x.com/2021/12/09/o4JJRf.png",
             "blue": "https://s1.ax1x.com/2021/12/09/o4J9r4.png",
             "black": "https://s1.ax1x.com/2021/12/09/o4JJRf.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4JwZj.png"
+            "white": "https://s1.ax1x.com/2021/12/09/o4JwZj.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o4jfRe.png"
         },
         "corsair": {
             "default": "https://s1.ax1x.com/2021/12/09/o4JIF1.png",
             "blue": "https://s1.ax1x.com/2021/12/09/o4J4oR.png",
             "black": "https://s1.ax1x.com/2021/12/09/o4JIF1.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4Jhw9.png"
+            "white": "https://s1.ax1x.com/2021/12/09/o4Jhw9.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o4jhxH.png"
         },
         "continental": {
             "default": "https://s1.ax1x.com/2021/12/09/o4YCSf.png",
             "blue": "https://s1.ax1x.com/2021/12/09/o4YPl8.png",
             "black": "https://s1.ax1x.com/2021/12/09/o4YCSf.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4YpfP.png"
+            "white": "https://s1.ax1x.com/2021/12/09/o4YpfP.png",
+            "red": "https://s1.ax1x.com/2021/12/09/o4YpfP.png"
         },
         "zephyr": {
             "default": "https://s1.ax1x.com/2021/12/09/o4YzB4.png",
             "blue": "https://s1.ax1x.com/2021/12/09/o4YjjU.png",
             "black": "https://s1.ax1x.com/2021/12/09/o4YzB4.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4YxuF.png"
+            "white": "https://s1.ax1x.com/2021/12/09/o4YxuF.png",
+            "red": "https://s1.ax1x.com/2021/12/10/o4j5Md.png"
         }
     }
 }
