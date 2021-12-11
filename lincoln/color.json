@@ -43,11 +43,18 @@
             "red": "https://s1.ax1x.com/2021/12/10/o4j5Md.png"
         },
         "mkc": {
-            "default": "https://s1.ax1x.com/2021/12/09/o4YzB4.png",
-            "blue": "https://s1.ax1x.com/2021/12/09/o4YjjU.png",
-            "black": "https://s1.ax1x.com/2021/12/09/o4YzB4.png",
-            "white": "https://s1.ax1x.com/2021/12/09/o4YxuF.png",
-            "red": "https://s1.ax1x.com/2021/12/10/o4j5Md.png"
+            "default": "https://s1.ax1x.com/2021/12/09/o4YCSf.png",
+            "blue": "https://s1.ax1x.com/2021/12/09/o4YPl8.png",
+            "black": "https://s1.ax1x.com/2021/12/09/o4YCSf.png",
+            "white": "https://s1.ax1x.com/2021/12/09/o4YpfP.png",
+            "red": "https://s1.ax1x.com/2021/12/09/o4YpfP.png"
+        },
+        "mkz": {
+            "default": "https://s1.ax1x.com/2021/12/09/o4YCSf.png",
+            "blue": "https://s1.ax1x.com/2021/12/09/o4YPl8.png",
+            "black": "https://s1.ax1x.com/2021/12/09/o4YCSf.png",
+            "white": "https://s1.ax1x.com/2021/12/09/o4YpfP.png",
+            "red": "https://s1.ax1x.com/2021/12/09/o4YpfP.png"
         }
     }
 }
