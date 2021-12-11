@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.2",
-    "WIDGET_BUILD": "2021120801",
-    "CHANGELOG": "1.修复多辆车显示问题"
+    "WIDGET_VERSION": "v1.0.3",
+    "WIDGET_BUILD": "2021121101",
+    "CHANGELOG": "1.修复多辆车显示问题\n修复若干bug\n"
 }
