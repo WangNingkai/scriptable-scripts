@@ -1,3 +1,16 @@
 {
-    "car": {}
+    "car": {
+        "fs11": {
+            "default": "https://s4.ax1x.com/2021/12/12/obIHeI.png",
+            "白": "https://s4.ax1x.com/2021/12/12/obI5Se.png",
+            "黑": "https://s4.ax1x.com/2021/12/12/obIUoV.png",
+            "灰": "https://s4.ax1x.com/2021/12/12/obIHeI.png"
+        },
+        "kx11": {
+            "default": "https://s4.ax1x.com/2021/12/12/oHzTY9.png",
+            "白": "https://s4.ax1x.com/2021/12/12/obRZqK.png",
+            "黑": "https://s4.ax1x.com/2021/12/12/obom6J.png",
+            "灰": "https://s4.ax1x.com/2021/12/12/oHzTY9.png"
+        }
+    }
 }
