@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.4",
-    "WIDGET_BUILD": "2021121101",
-    "CHANGELOG": "1.修复若干bug\n"
+    "WIDGET_VERSION": "v1.0.5",
+    "WIDGET_BUILD": "2021121401",
+    "CHANGELOG": "1.修复若干bug\n 2.添加打开充电盖快捷指令 {\"act\":\"charger-lid-open\"} \n 3.添加打开尾箱快捷指令 {\"act\":\"tail-gate-open\"}\n"
 }
