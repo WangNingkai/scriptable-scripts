@@ -2,7 +2,9 @@
 
 > 领克汽车自定义桌面组件.
 
-![I9vmMt.png](https://s6.jpg.cm/2021/11/10/I9vmMt.png)
+- 支持广泛
+- 实时同步
+- 风格多样
 
-[简介](README.md)
 [安装指南](install.md)
+[其它配置](other.md)

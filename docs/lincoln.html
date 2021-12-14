@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>「小件件」林肯出行安装指南</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #copy,
+      #open,
+      #download {
+        width: 200px;
+        height: 50px;
+        background-color: green;
+        color: #fff;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      #open {
+        background-color: darkred;
+      }
+
+      #download {
+        background-color: darkred;
+      }
+      #js {
+        width: 200px;
+        height: 100px;
+        margin: 20px;
+        z-index: -1;
+      }
+    </style>
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement('script');
+        hm.src = 'https://hm.baidu.com/hm.js?6fff3d0630d688ff6cb8abeb0f4e87d7';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>
+      <a href="https://scriptable.ningkai.wang" style="text-decoration: none; color: #666">「小件件」</a
+      >林肯出行安装指南
+    </h1>
+
+    <a id="download" href="https://apps.apple.com/cn/app/scriptable/id1405459188" target="_blank"
+      >✔ 1.下载安装 Scriptable</a
+    >
+
+    <br />
+
+    <button id="copy" onclick="copy()">👇 2.点击复制下方代码</button>
+    <textarea id="js" readonly>
+const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
+await Promise.all(
+    ['「小件件」林肯出行.js'].map(async (js) => {
+        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/lincoln/lincoln.js');
+        const RES = await REQ.load();
+        FILE_MGR.write(FILE_MGR.joinPath(FILE_MGR.documentsDirectory(), js), RES);
+    })
+);
+FILE_MGR.remove(module.filename);
+Safari.open(
+    'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」林肯出行')
+);
+  </textarea
+    >
+    <a id="open" href="scriptable:///add?scriptName=hello">👉 3. 点击打开 Scriptable</a>
+
+    <p><b>打开 Scriptable，点击 ➕，粘贴，运行 ▶️</b></p>
+
+    <p><b>4. 然后点击 「小件件」林肯出行 配置账号 - 账号必填，密码必填，其他可不填</b></p>
+
+    <p>
+      <b>
+        5. 回桌面空白处长按，左上角「 + 」添加小组件 搜 Scriptable，添加完在图标抖动编辑状态下，单击刚添加的组件。Script
+        选择你刚新建的 「小件件」林肯出行。完成。</b
+      >
+    </p>
+
+    <h3 style="color: red">
+      更多安装配置指南参考 <a target="_blank" href="https://scriptable.ningkai.wang">「小件件」领克出行</a>
+    </h3>
+
+    <h3 style="color: red">免责申明：</h3>
+    <p style="color: red">1. 出行小组件需要使用到您的相关app账号登录获取相关权限，这也是为了帮您获取相关显示内容。</p>
+
+    <p style="color: red">
+      2.
+      出行小组件不会收集您的个人账户信息，所有账号信息将存在iCloud或者iPhone上，不会上传，我不会获取到你的账号，但也请您妥善保管自己的账号！
+    </p>
+
+    <p style="color: red">
+      3. 本组件非官方人员开发，由作者个人开发者提供。 使用本组件，如果导致APP端踢下线。这是正常现象，请勿担心！
+    </p>
+
+    <p style="color: red">
+      4.
+      使用本组件造成的所有损失、后果，由使用者自行负责，组件仅作为快捷辅助工具，请勿私自用于商业行为，如果私自使用该组件倒卖，恶意推广造成的一切法律后果，将追究个人、组织相应法律责任！组件作者不承担任何后果。作者保留最终解释权！
+    </p>
+  </body>
+
+  <script>
+    let copyOK = 0;
+    function copy() {
+      document.getElementById('js').select();
+      document.execCommand('Copy');
+      document.getElementById('copy').innerText = '复制成功！' + (copyOK > 0 ? '+' + copyOK : '');
+      copyOK++;
+      document.getElementById('open').focus();
+    }
+  </script>
+</html>
