@@ -157,6 +157,7 @@ class Base {
     if (body) {
       request.body = body;
     }
+    request.timeoutInterval = 10;
     // @ts-ignore
     let data = await (json ? request.loadJSON() : request.loadString());
     // @ts-ignore
@@ -238,7 +239,7 @@ class Base {
 
   /**
    * 存储当前设置
-   * @param {bool} notify 是否通知提示
+   * @param {*} notify 是否通知提示
    */
   saveSettings(notify=true){
     let res= (typeof this.settings==="object")?JSON.stringify(this.settings):String(this.settings)
@@ -261,19 +262,25 @@ const Running = async (Widget, default_args = "") => {
     Script.setWidget(W)
     Script.complete()
   } else if (config.runsWithSiri) {
-    act = args.shortcutParameter.act
+    let act = args.shortcutParameter.act
+    let output = args.shortcutParameter.output || false;
     if (typeof act !== "undefined" && act) {
       M = new Widget()
       M.init()
       let _tmp = act.split('-').map(_ => _[0].toUpperCase() + _.substr(1)).join('')
-      let _act = `action${_tmp}`
-      if (M[_act] && typeof M[_act] === 'function') {
-        const func = M[_act].bind(M)
-        await func()
+      let _act = `action${_tmp}`
+      if (M[_act] && typeof M[_act] === 'function') {
+        const func = M[_act].bind(M)
+        const data = await func()
+        if (output) {
+            Script.setShortcutOutput(data)
+        }
+        Script.complete()
+        return
       }
     }
     Script.complete()
-  } else {
+  } else {
     let { act, data, __arg, __size } = args.queryParameters
     M = new Widget(__arg || default_args || '')
     if (__size) M.init(__size)
@@ -323,7 +330,7 @@ const Testing = async (Widget, default_args = "") => {
     Script.setWidget(W)
     Script.complete()
   } else if (config.runsWithSiri) {
-    act = args.shortcutParameter.act
+    let act = args.shortcutParameter.act
     if (typeof act !== "undefined" && act) {
       M = new Widget()
       M.init()
