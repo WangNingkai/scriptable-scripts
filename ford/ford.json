@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.3",
-    "WIDGET_BUILD": "2021121301",
-    "CHANGELOG": "1.修复若干bug\n2.修复部分车型时间显示异常\n"
+    "WIDGET_VERSION": "v1.0.4",
+    "WIDGET_BUILD": "2021121401",
+    "CHANGELOG": "1.修复若干bug\n2.修复快捷指令异常\n"
 }
