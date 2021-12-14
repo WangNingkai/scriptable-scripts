@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.0",
-    "WIDGET_BUILD": "2021121301",
-    "CHANGELOG": "1.添加Volvo支持\n"
+    "WIDGET_VERSION": "v1.0.1",
+    "WIDGET_BUILD": "2021121401",
+    "CHANGELOG": "1.添加Volvo支持\n2.修复若干显示异常问题"
 }
