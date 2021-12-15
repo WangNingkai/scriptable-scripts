@@ -166,6 +166,24 @@ class Base {
   }
 
   /**
+   * 给图片加一层半透明遮罩
+   * @param {Image} img 要处理的图片
+   * @param {string} color 遮罩背景颜色
+   * @param {any} opacity 透明度
+   */
+  async shadowImage(img, color = '#000000', opacity = 0.7) {
+    let ctx = new DrawContext()
+    // 获取图片的尺寸
+    ctx.size = img.size
+
+    ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']))
+    ctx.setFillColor(new Color(color, opacity))
+    ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']))
+
+    return await ctx.getImage()
+  }
+
+  /**
    * 获取远程图片内容
    * @param {string} url 图片地址
    * @param {boolean} useCache 是否使用缓存（请求失败时获取本地缓存）
@@ -275,11 +293,8 @@ const Running = async (Widget, default_args = "") => {
         if (output) {
             Script.setShortcutOutput(data)
         }
-        Script.complete()
-        return
       }
     }
-    Script.complete()
   } else {
     let { act, data, __arg, __size } = args.queryParameters
     M = new Widget(__arg || default_args || '')
@@ -315,8 +330,8 @@ const Running = async (Widget, default_args = "") => {
       const func = M[_act].bind(M)
       await func(data)
     }
-    Script.complete()
   }
+  Script.complete()
 }
 // @running.end
 
