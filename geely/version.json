@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.0.3",
-    "WIDGET_BUILD": "2021121202",
-    "CHANGELOG": "1.添加更多车辆支持\n修复若干bug\n"
+    "WIDGET_VERSION": "v2.0.4",
+    "WIDGET_BUILD": "2021121601",
+    "CHANGELOG": "1.修复弹框复现问题\n修复若干bug\n"
 }
