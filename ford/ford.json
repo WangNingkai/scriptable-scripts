@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.4",
-    "WIDGET_BUILD": "2021121401",
-    "CHANGELOG": "1.修复若干bug\n2.修复快捷指令异常\n"
+    "WIDGET_VERSION": "v1.1.0",
+    "WIDGET_BUILD": "2021121701",
+    "CHANGELOG": "1.修复弹框重现问题\n2.优化自定义设置，自定义图片设置增加本地选择\n3.修复更新问题\n4.修复地图显示"
 }
