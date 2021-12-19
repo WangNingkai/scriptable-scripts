@@ -1,0 +1,25 @@
+{
+    "car": {
+        "es": {
+            "default": "https://img.lexus.com.cn/images/common/es-model-400x160.png"
+        },
+        "nx": {
+            "default": "https://img.lexus.com.cn/images/common/nx-model-400x160.png"
+        },
+        "ux": {
+            "default": "https://img.lexus.com.cn/images/common/ux-model-400x160.png"
+        },
+        "rx": {
+            "default": "https://img.lexus.com.cn/images/common/rx-model-400x160.png"
+        },
+        "ls": {
+            "default": "https://img.lexus.com.cn/images/common/ls-model-400x160.png"
+        },
+        "lc": {
+            "default": "https://img.lexus.com.cn/images/common/lc-model-400x160.png"
+        },
+        "lm": {
+            "default": "https://img.lexus.com.cn/images/common/lm-model-400x160.png"
+        }
+    }
+}
