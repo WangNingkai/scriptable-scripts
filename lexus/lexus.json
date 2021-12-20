@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.0",
-    "WIDGET_BUILD": "2021121801",
-    "CHANGELOG": "1.添加雷克萨斯支持"
+    "WIDGET_VERSION": "v1.0.1",
+    "WIDGET_BUILD": "2021122001",
+    "CHANGELOG": "1.添加雷克萨斯支持\n2.完善部分车型中、大尺寸组件渲染失败问题\n3.定位问题还在研究"
 }
