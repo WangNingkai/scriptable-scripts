@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.2",
-    "WIDGET_BUILD": "2021122003",
-    "CHANGELOG": "1.修复地图显示\n2.完善车辆状态显示\n"
+    "WIDGET_VERSION": "v1.0.3",
+    "WIDGET_BUILD": "2021122004",
+    "CHANGELOG": "1.修复若干兼容显示问题\n"
 }
