@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.0.4",
-    "WIDGET_BUILD": "2021121601",
-    "CHANGELOG": "1.修复弹框复现问题\n修复若干bug\n"
+    "WIDGET_VERSION": "v2.0.5",
+    "WIDGET_BUILD": "2021122101",
+    "CHANGELOG": "1.优化网络异常问题和一些缓存失效问题\n"
 }

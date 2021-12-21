@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.1.7",
-    "WIDGET_BUILD": "2021122101",
-    "CHANGELOG": "1.改善网络异常问题\n2.默认刷新时间恢复最小5分钟\n"
+    "WIDGET_VERSION": "v2.1.8",
+    "WIDGET_BUILD": "2021122102",
+    "CHANGELOG": "1.改善网络异常问题\n2.改善缓存丢失问题\n"
 }
