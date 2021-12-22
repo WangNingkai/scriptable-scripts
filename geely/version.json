@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v2.0.5",
-    "WIDGET_BUILD": "2021122101",
+    "WIDGET_VERSION": "v2.0.6",
+    "WIDGET_BUILD": "2021122201",
     "CHANGELOG": "1.优化网络异常问题和一些缓存失效问题\n"
 }
