@@ -1,1 +1,13 @@
-{}
+{
+    "car": {
+        "vv5": {
+            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+        },
+        "vv6": {
+            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+        },
+        "vv7": {
+            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+        }
+    }
+}
