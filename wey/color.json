@@ -1,16 +1,16 @@
 {
     "car": {
         "vv5": {
-            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+            "default": "https://gitee.com/wangningkai/scriptable-scripts/raw/master/wey/img/vv5.png"
         },
         "vv6": {
-            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+            "default": "https://gitee.com/wangningkai/scriptable-scripts/raw/master/wey/img/vv6.png"
         },
         "vv7": {
-            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+            "default": "https://gitee.com/wangningkai/scriptable-scripts/raw/master/wey/img/vv7.png"
         },
         "tank": {
-            "default": "https://s6.jpg.cm/2021/11/19/ID0NX8.png"
+            "default": "https://gitee.com/wangningkai/scriptable-scripts/raw/master/wey/img/tank.png"
         }
     }
 }
