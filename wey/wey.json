@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.0.1",
-    "WIDGET_BUILD": "2021122505",
-    "CHANGELOG": "1.调整部分操作\n"
+    "WIDGET_VERSION": "v1.0.2",
+    "WIDGET_BUILD": "2021122701",
+    "CHANGELOG": "1.优化部分车辆不支持天窗操作\n"
 }
