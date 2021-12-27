@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.2.0",
-    "WIDGET_BUILD": "2021122301",
-    "CHANGELOG": "1.改善网络异常问题\n2.兼容部分车型\n3.限制刷新\n"
+    "WIDGET_VERSION": "v1.2.1",
+    "WIDGET_BUILD": "2021122701",
+    "CHANGELOG": "1.显示细节优化\n2.添加自定义背景图片设置\n"
 }
