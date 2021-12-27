@@ -87,9 +87,9 @@ class Base {
 
   /**
    * 缩放图片
-   * @param {*} imageSize 
-   * @param {*} height 
-   * @returns 
+   * @param {*} imageSize
+   * @param {*} height
+   * @returns
    */
   scaleImage(imageSize, height) {
     let scale = height / imageSize.height;
@@ -98,8 +98,8 @@ class Base {
 
   /**
    * 判断对象是否为空
-   * @param {*} mixedVar 
-   * @returns 
+   * @param {*} mixedVar
+   * @returns
    */
   empty (mixedVar) {
     let undef
@@ -125,9 +125,9 @@ class Base {
 
   /**
    * 时间转换
-   * @param {*} ts 
-   * @param {*} formatter 
-   * @returns 
+   * @param {*} ts
+   * @param {*} formatter
+   * @returns
    */
   dateFormat(ts,formatter = 'yyyy-MM-dd HH:mm') {
     let date = new Date(ts);
@@ -157,7 +157,7 @@ class Base {
     if (body) {
       request.body = body;
     }
-    request.timeoutInterval = 10;
+    request.timeoutInterval = 30;
     // @ts-ignore
     let data = await (json ? request.loadJSON() : request.loadString());
     // @ts-ignore
@@ -233,7 +233,7 @@ class Base {
     return await n.schedule()
   }
 
-  
+
   /**
    * 获取当前插件的设置
    * @param {boolean} json 是否为json格式
@@ -251,7 +251,7 @@ class Base {
       }else{
         res=cache
       }
-    
+
     return res
   }
 
@@ -266,7 +266,7 @@ class Base {
     if (notify) this.notify("设置成功","桌面组件稍后将自动刷新")
   }
 
-  
+
 }
 // @base.end
 // 运行环境
@@ -356,7 +356,7 @@ const Testing = async (Widget, default_args = "") => {
         await func()
       }
     }
-    
+
     Script.complete()
   } else {
     let { act, data, __arg, __size } = args.queryParameters
@@ -542,12 +542,6 @@ const Testing = async (Widget, default_args = "") => {
             Pasteboard.copyString(source)
             await M.notify("复制成功", "当前脚本的源代码已复制到剪贴板！")
           },
-          async () => {
-            Safari.openInApp("https://www.kancloud.cn/im3x/scriptable/content", false)
-          },
-          async () => {
-            Safari.openInApp("https://support.qq.com/products/287371", false)
-          }
         ]
         const alert = new Alert()
         alert.title = M.name
@@ -555,8 +549,6 @@ const Testing = async (Widget, default_args = "") => {
         alert.addAction("远程开发")
         alert.addAction("预览组件")
         alert.addAction("复制源码")
-        alert.addAction("开发文档")
-        alert.addAction("反馈交流")
         for (let _ in actions) {
           alert.addAction(_)
           _actions.push(actions[_])
