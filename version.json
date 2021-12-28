@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.2.1",
-    "WIDGET_BUILD": "2021122701",
-    "CHANGELOG": "1.显示细节优化\n2.添加自定义背景图片设置\n"
+  "WIDGET_VERSION": "v1.2.2",
+  "WIDGET_BUILD": "2021122801",
+  "CHANGELOG": "1.显示细节优化\n2.添加自定义提示、地址设置\n"
 }
