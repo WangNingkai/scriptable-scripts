@@ -1,0 +1,22 @@
+{
+  "car": {
+    "xe": {
+      "default": "https://s6.jpg.cm/2021/12/29/LHzLhy.png"
+    },
+    "xf": {
+      "default": "https://s6.jpg.cm/2021/12/29/LHzLhy.png"
+    },
+    "f-type": {
+      "default": "https://s6.jpg.cm/2021/12/29/LHzLhy.png"
+    },
+    "e-pace": {
+      "default": "https://s6.jpg.cm/2021/12/29/LHzLhy.png"
+    },
+    "f-pace": {
+      "default": "https://s6.jpg.cm/2021/12/29/LHzLhy.png"
+    },
+    "i-pace": {
+      "default": "https://s6.jpg.cm/2021/12/29/LHzLhy.png"
+    }
+  }
+}
