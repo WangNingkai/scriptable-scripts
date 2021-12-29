@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.2.2",
-  "WIDGET_BUILD": "2021122801",
-  "CHANGELOG": "1.显示细节优化\n2.添加自定义提示、地址设置\n"
+  "WIDGET_VERSION": "v1.2.3",
+  "WIDGET_BUILD": "2021122901",
+  "CHANGELOG": "1.完善部分机型显示问题\n2.优化06锁车状态\n"
 }
