@@ -1,5 +1,5 @@
 {
   "WIDGET_VERSION": "v1.0.1",
-  "WIDGET_BUILD": "2021123001",
+  "WIDGET_BUILD": "2021123002",
   "CHANGELOG": "1.修复部分机型登录授权失效问题，重新登录即可\n"
 }
