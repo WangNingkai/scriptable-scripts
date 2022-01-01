@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.2.4",
-  "WIDGET_BUILD": "2022010101",
-  "CHANGELOG": "1.优化室外温度显示问题\n2.优化部分异常显示问题\n"
+  "WIDGET_VERSION": "v1.2.5",
+  "WIDGET_BUILD": "2022010102",
+  "CHANGELOG": "1.优化老车机数据异常显示问题\n"
 }
