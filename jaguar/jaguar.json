@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.1",
-  "WIDGET_BUILD": "2021123002",
-  "CHANGELOG": "1.修复部分机型登录授权失效问题，重新登录即可\n"
+  "WIDGET_VERSION": "v1.0.2",
+  "WIDGET_BUILD": "2022010101",
+  "CHANGELOG": "1.添加车控功能、适配更多车型\n"
 }
