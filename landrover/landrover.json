@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.2",
-  "WIDGET_BUILD": "2022010101",
-  "CHANGELOG": "1.添加车控功能、适配更多车型\n"
+  "WIDGET_VERSION": "v1.0.3",
+  "WIDGET_BUILD": "2022010301",
+  "CHANGELOG": "1.调整门锁状态显示\n"
 }
