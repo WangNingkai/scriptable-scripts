@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>「小件件」福特出行安装指南</title>
+    <title>「小件件」Lexus出行安装指南</title>
     <style>
       body {
         display: flex;
@@ -52,7 +52,7 @@
   <body>
     <h1>
       <a href="https://scriptable.ningkai.wang" style="text-decoration: none; color: #666">「小件件」</a
-      >福特出行安装指南
+      >Lexus出行安装指南
     </h1>
 
     <a id="download" href="https://apps.apple.com/cn/app/scriptable/id1405459188" target="_blank"
@@ -65,33 +65,35 @@
     <textarea id="js" readonly>
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
 await Promise.all(
-    ['「小件件」福特出行.js'].map(async (js) => {
-        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/ford/ford.js');
+    ['「小件件」Lexus出行.js'].map(async (js) => {
+        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/lexus/lexus.js');
         const RES = await REQ.load();
         FILE_MGR.write(FILE_MGR.joinPath(FILE_MGR.documentsDirectory(), js), RES);
     })
 );
 FILE_MGR.remove(module.filename);
 Safari.open(
-    'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」福特出行')
+    'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」Lexus出行')
 );
   </textarea
     >
-    <p><b>打开 Scriptable，点击 ➕，粘贴，运行 ▶️</b></p>
-
     <a id="open" href="scriptable:///add?scriptName=hello">👉 3. 点击打开 Scriptable</a>
 
-    <p><b>4. 然后点击 「小件件」福特出行 配置账号 - 账号必填，密码必填，其他可不填</b></p>
+    <p><b>打开 Scriptable，点击 ➕，粘贴，运行 ▶️</b></p>
+
+    <p><b>4. 然后点击 「小件件」Lexus出行 配置账号 - 账号必填，密码必填，其他可不填</b></p>
 
     <p>
       <b>
         5. 回桌面空白处长按，左上角「 + 」添加小组件 搜 Scriptable，添加完在图标抖动编辑状态下，单击刚添加的组件。Script
-        选择你刚新建的 「小件件」福特出行。完成。</b
+        选择你刚新建的 「小件件」Lexus出行。完成。</b
       >
     </p>
-    <p style="color: red">注意：由于车型问题，部分车辆由于未获取福特派授权，无法获取相关车辆数据，慎用。</p>
-
-    <p style="color: red">车型图片暂未全部适配，默认野马图片</p>
+    
+    <p style="color: red">注意： ⚠车辆信息数据结构复杂，需要经过开发者服务器中专转换。⚠介意者慎用！。</p>
+    
+    <p style="color: red">如果账号有以下提示也是无法使用的：</p>
+    <p style="color: red">尊敬的雷克萨斯车主，感谢您关注G-BOOK智能副驾服务！本服务仅限搭载G-BOOK车载器车辆的顾客可以使用。</p>
 
     <h3 style="color: red">
       更多安装配置指南参考 <a target="_blank" href="https://scriptable.ningkai.wang">「小件件」领克出行</a>

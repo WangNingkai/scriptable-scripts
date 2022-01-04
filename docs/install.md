@@ -1,7 +1,9 @@
 
 # 安装指南
 
-**<span style="color:red">11月9日前安装的脚本，由于脚本时间出现问题，会出现更新异常问题，建议删除脚本重新拉取！！！</span>**
+**<span style="color:red">注意：由于官方车型限制，部分Linux老车机暂时无法获取相关车辆数据，慎用！！</span>**
+
+
 
 
 > 下面安装以 `「小件件」领克出行` 为例，其它汽车组件安装步骤相同
@@ -25,6 +27,9 @@
 
 #### 2.0版本  `「小件件」领克出行2.0` 
 
+**<span style="color:red">注意：由于官方车型限制，部分Linux老车机暂时无法获取相关车辆数据，慎用！！</span>**
+
+
 ```js
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
 await Promise.all(
@@ -43,6 +48,8 @@ Safari.open(
 --- 
 
 ####  1.0版本 （默认带小地图）  `「小件件」领克出行` 
+
+**<span style="color:red">注意：由于官方车型限制，部分Linux老车机暂时无法获取相关车辆数据，慎用！！</span>**
 
 ```js
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
@@ -88,7 +95,7 @@ Safari.open(
 **图床地址：** [点击此处](https://imgtu.com)
 
 
-**注意: 此处登录账号非领克App账号，请前往下载 [吉利G-NetLink](https://apps.apple.com/cn/app/scriptable/id1222208349) 软件注册，务必使用绑定车辆的领克APP手机号注册账号，再返回脚本执行设置操作。**
+**注意: 领克车友注意此处登录账号非领克App账号，请前往下载 [吉利G-NetLink](https://apps.apple.com/cn/app/scriptable/id1222208349) 软件注册，务必使用绑定车辆的领克APP手机号注册账号，再返回脚本执行设置操作。**
 
 
 
