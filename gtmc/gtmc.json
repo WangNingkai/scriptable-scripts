@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.0",
-  "WIDGET_BUILD": "2022010502",
-  "CHANGELOG": "1.添加广汽丰田\n"
+  "WIDGET_VERSION": "v1.0.1",
+  "WIDGET_BUILD": "2022010503",
+  "CHANGELOG": "1.添加广汽丰田部分车型支持\n2.支持自动数据解析导入\n"
 }
