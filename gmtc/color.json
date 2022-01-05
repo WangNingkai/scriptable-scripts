@@ -1,0 +1,16 @@
+{
+  "car": {
+    "雷凌": {
+      "default": "https://www.gac-toyota.com.cn/2021/images/header/cat/c3-45.png"
+    },
+    "威兰达": {
+      "default": "https://www.gac-toyota.com.cn/2021/images/header/cat/c3-45.png"
+    },
+    "汉兰达": {
+      "default": "https://www.gac-toyota.com.cn/2021/images/header/cat/c3-45.png"
+    },
+    "凯美瑞": {
+      "default": "https://www.gac-toyota.com.cn/2021/images/header/cat/c3-45.png"
+    }
+  }
+}
