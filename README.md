@@ -1,5 +1,8 @@
 # 「小件件」领克出行
 
+**<span style="color:red">11月9日前安装的脚本，由于脚本时间出现问题，会出现更新异常问题，建议删除脚本重新拉取！！！</span>**
+
+
 > 基于 `Scriptable` App 开发的一个桌面小组件脚本。使用iOS 小组件快速开发框架「小件件」作为开发框架而搭建。主要从各个APP API中获取车辆相关信息并以桌面小组件的形式展示到iOS设备上。
 
 
@@ -19,6 +22,7 @@
 - WEY汽车 [点击前往复制代码](https://scriptable.ningkai.wang/wey.html)
 - 捷豹汽车 [点击前往复制代码](https://scriptable.ningkai.wang/jaguar.html)
 - 路虎汽车 [点击前往复制代码](https://scriptable.ningkai.wang/landrover.html)
+- 广汽丰田汽车 [点击前往复制代码](https://scriptable.ningkai.wang/gtmc.html)
 
 
 ### 注意
