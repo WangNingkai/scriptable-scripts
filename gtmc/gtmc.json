@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.3",
-  "WIDGET_BUILD": "2022010602",
-  "CHANGELOG": "1.添加APP抓包导入数据\n"
+  "WIDGET_VERSION": "v1.0.4",
+  "WIDGET_BUILD": "2022010701",
+  "CHANGELOG": "1.优化状态查询\n"
 }
