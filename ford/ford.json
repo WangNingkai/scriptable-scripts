@@ -1,5 +1,5 @@
 {
-    "WIDGET_VERSION": "v1.1.2",
-    "WIDGET_BUILD": "2021122301",
-    "CHANGELOG": "1.兼容部分车型无法显示问题\n"
+  "WIDGET_VERSION": "v1.1.3",
+  "WIDGET_BUILD": "2022010701",
+  "CHANGELOG": "1.优化网络异常问题和一些缓存失效问题\n"
 }
