@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.5",
-  "WIDGET_BUILD": "2022010702",
-  "CHANGELOG": "1.优化图片显示以及图标显示\n"
+  "WIDGET_VERSION": "v1.0.6",
+  "WIDGET_BUILD": "2022010703",
+  "CHANGELOG": "1.自定义车辆图片增加同步app图片\n"
 }
