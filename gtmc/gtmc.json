@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.6",
-  "WIDGET_BUILD": "2022010703",
-  "CHANGELOG": "1.自定义车辆图片增加同步app图片\n"
+  "WIDGET_VERSION": "v1.0.7",
+  "WIDGET_BUILD": "2022010801",
+  "CHANGELOG": "1.优化多辆车图片重复问题\n2.自定义缓存时间可设置5分钟内\n"
 }
