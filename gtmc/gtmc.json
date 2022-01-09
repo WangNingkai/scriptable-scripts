@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.7",
-  "WIDGET_BUILD": "2022010801",
-  "CHANGELOG": "1.优化多辆车图片重复问题\n2.自定义缓存时间可设置5分钟内\n"
+  "WIDGET_VERSION": "v1.0.8",
+  "WIDGET_BUILD": "2022010901",
+  "CHANGELOG": "1.调整小尺寸车标显示\n2.增加车门车窗疏忽提示\n"
 }
