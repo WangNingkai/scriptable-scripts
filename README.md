@@ -23,7 +23,7 @@
 - 捷豹汽车 [点击前往复制代码](https://scriptable.ningkai.wang/jaguar.html)
 - 路虎汽车 [点击前往复制代码](https://scriptable.ningkai.wang/landrover.html)
 - 广汽丰田汽车 [点击前往复制代码](https://scriptable.ningkai.wang/gtmc.html)
-
+- 一汽丰田汽车 [点击前往复制代码](https://scriptable.ningkai.wang/ftms.html)
 
 ### 注意
 
