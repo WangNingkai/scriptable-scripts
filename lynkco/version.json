@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v2.2.6",
-  "WIDGET_BUILD": "2022011001",
+  "WIDGET_VERSION": "v2.2.7",
+  "WIDGET_BUILD": "2022011002",
   "CHANGELOG": "1.增加静态地图背景的设置\n2优化大组件显示效果\n"
 }
