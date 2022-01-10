@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v2.2.5",
-  "WIDGET_BUILD": "2022010102",
-  "CHANGELOG": "1.优化老车机数据异常显示问题\n"
+  "WIDGET_VERSION": "v2.2.6",
+  "WIDGET_BUILD": "2022011001",
+  "CHANGELOG": "1.增加静态地图背景的设置\n2优化大组件显示效果\n"
 }
