@@ -1,12 +1,6 @@
 
 # 安装指南
 
-**<span style="color:red">注意：由于官方车型限制，部分Linux老车机暂时无法获取相关车辆数据，慎用！！</span>**
-
-
-
-
-> 下面安装以 `「小件件」领克出行` 为例，其它汽车组件安装步骤相同
 
 ### 1.下载Scriptable
 
@@ -23,57 +17,11 @@
 
 ![I9pswE.md.png](https://s6.jpg.cm/2021/11/10/I9pswE.md.png)
 
----
-
-#### 2.0版本  `「小件件」领克出行2.0` 
-
-**<span style="color:red">注意：由于官方车型限制，部分Linux老车机暂时无法获取相关车辆数据，慎用！！</span>**
-
-
-```js
-const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
-await Promise.all(
-    ['「小件件」领克出行2.0.js'].map(async (js) => {
-        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/lynkco/lynkco2.0.js');
-        const RES = await REQ.load();
-        FILE_MGR.write(FILE_MGR.joinPath(FILE_MGR.documentsDirectory(), js), RES);
-    })
-);
-FILE_MGR.remove(module.filename);
-Safari.open(
-    'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」领克出行2.0')
-);
-```
-
---- 
-
-####  1.0版本 （默认带小地图）  `「小件件」领克出行` 
-
-**<span style="color:red">注意：由于官方车型限制，部分Linux老车机暂时无法获取相关车辆数据，慎用！！</span>**
-
-```js
-const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
-await Promise.all(
-    ['「小件件」领克出行.js'].map(async (js) => {
-        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/lynkco.js');
-        const RES = await REQ.load();
-        FILE_MGR.write(FILE_MGR.joinPath(FILE_MGR.documentsDirectory(), js), RES);
-    })
-);
-FILE_MGR.remove(module.filename);
-Safari.open(
-    'scriptable:///open?scriptName=' + encodeURIComponent('「小件件」领克出行')
-);
-```
-
----
-
-![版本展示图](https://s6.jpg.cm/2021/11/17/Ixok5E.png)
 
 
 ### 3.设置账号与设置组件
 
-点击 `「小件件」领克出行2.0` 、 `「小件件」领克出行` 或 `其他出行组件`  选择 `设置账号` 进行账号设置，账号、密码必填（其他车辆请看各自文档说明），选择 `设置组件` 进行组件自定义设置，部分数据可不填，默认读取车辆数据
+点击 `「小件件」xx出行` 或 `其他出行组件`  选择 `设置账号` 进行账号设置，账号、密码必填（其他车辆请看各自文档说明），选择 `设置组件` 进行组件自定义设置，部分数据可不填，默认读取车辆数据
 
 
 ![菜单](https://s4.ax1x.com/2022/01/10/7ARN3n.jpg)
@@ -105,7 +53,7 @@ Safari.open(
 
 - 搜 `Scriptable`，添加完组件后，在`图标抖动编辑状态`下单击刚添加的组件，或 `长按组件` 选择 `编辑小组件`。
 
-- `Script` 选择你刚新建的 `「小件件」领克出行2.0` 、 `「小件件」领克出行` 或其他出行组件，其他无需设置 。操作完成等待组件刷新即可。
+- `Script` 选择你刚新建的  `「小件件」xx出行` 或其他出行组件，其他无需设置 。操作完成等待组件刷新即可。
 
 如果没刷新 就再走一下 `「步骤3」`重新设置。
 
@@ -114,10 +62,4 @@ Safari.open(
 
 ![I9pCEi.png](https://s6.jpg.cm/2021/11/10/I9pCEi.png)
 
-
-### 5.视频教程
-
-这里也是以 `「小件件」领克出行` 为例的，其他车型仅供参考。
-
-[视频教程](https://player.bilibili.com/player.html?aid=764608433&bvid=BV1Zr4y1Q7yb&cid=454279296&page=1 ':include :type=iframe width=100% height=600px')
 
