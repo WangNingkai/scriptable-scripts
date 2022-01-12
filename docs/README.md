@@ -5,18 +5,10 @@
 > 基于 `Scriptable` App 开发的一个桌面小组件脚本。使用iOS 小组件快速开发框架「小件件」作为开发框架而搭建。主要从各个APP API中获取车辆相关信息并以桌面小组件的形式展示到iOS设备上。
 
 
-![I9vmMt.png](https://s6.jpg.cm/2021/11/10/I9vmMt.png)
-
-
-
 ### 支持车型
 
-- 领克全系支持车联网的车辆 [点击前往复制代码](https://scriptable.ningkai.wang/lynkco2.html)
-- 吉利CMA架构车辆和几何车辆 [点击前往复制代码](https://scriptable.ningkai.wang/geely2.html)
-- ~~极氪001 [点击前往复制代码](https://scriptable.ningkai.wang/zeekr.html) （官方封禁不可用！）~~
 - 林肯汽车 [点击前往复制代码](https://scriptable.ningkai.wang/lincoln.html)
 - 福特汽车 [点击前往复制代码](https://scriptable.ningkai.wang/ford.html)
-- 沃尔沃汽车 [点击前往复制代码](https://scriptable.ningkai.wang/volvo.html)
 - Lexus汽车 [点击前往复制代码](https://scriptable.ningkai.wang/lexus.html)
 - WEY汽车 [点击前往复制代码](https://scriptable.ningkai.wang/wey.html)
 - 捷豹汽车 [点击前往复制代码](https://scriptable.ningkai.wang/jaguar.html)

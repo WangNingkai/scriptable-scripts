@@ -5,10 +5,6 @@
 > 基于 `Scriptable` App 开发的一个桌面小组件脚本。使用iOS 小组件快速开发框架「小件件」作为开发框架而搭建。主要从各个APP API中获取车辆相关信息并以桌面小组件的形式展示到iOS设备上。
 
 
-![I9vmMt.png](https://s6.jpg.cm/2021/11/10/I9vmMt.png)
-
-
-
 ### 支持车型
 
 - 林肯汽车 [点击前往复制代码](https://scriptable.ningkai.wang/lincoln.html)
