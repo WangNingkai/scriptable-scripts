@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.1.2",
-  "WIDGET_BUILD": "2022011101",
-  "CHANGELOG": "1.增加深色模式静态地图背景的设置\n"
+  "WIDGET_VERSION": "v1.1.3",
+  "WIDGET_BUILD": "2022011301",
+  "CHANGELOG": "1.优化定位问题\n"
 }
