@@ -20,16 +20,9 @@ class Base {
     this.SETTING_KEY = this.md5(Script.name());
     // 文件管理器
     // 提示：缓存数据不要用这个操作，这个是操作源码目录的，缓存建议存放在local temp目录中
-    // @ts-ignore
-    this.FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
     // 本地，用于存储图片等
     this.FILE_MGR_LOCAL = FileManager.local();
-    this.BACKGROUND_KEY = this.FILE_MGR_LOCAL.joinPath(
-      this.FILE_MGR_LOCAL.documentsDirectory(),
-      `bg_${this.SETTING_KEY}.jpg`
-    );
-
-    // // 插件设置
+    //插件设置
     this.settings = this.getSettings();
   }
 
@@ -60,6 +53,14 @@ class Base {
       result = `${u}?${q}`;
     }
     return result;
+  }
+
+  /**
+   * 判断系统外观模式
+   * @return {Promise<boolean>}
+   */
+  async isUsingDarkAppearance() {
+    return !Color.dynamic(Color.white(), Color.black()).red;
   }
 
   /**
@@ -485,6 +486,21 @@ class Base {
   }
 
   /**
+   * Alert 弹窗封装
+   * @param message
+   * @param options
+   * @returns {Promise<number>}
+   */
+  async generateAlert(message, options) {
+    const alert = new Alert();
+    alert.message = message;
+    for (const option of options) {
+      alert.addAction(option);
+    }
+    return await alert.presentAlert();
+  }
+
+  /**
    * 缩放图片
    * @param {*} imageSize
    * @param {*} height
@@ -493,6 +509,68 @@ class Base {
   scaleImage(imageSize, height) {
     let scale = height / imageSize.height;
     return new Size(scale * imageSize.width, height);
+  }
+
+  /**
+   * 将图像裁剪到指定的 rect 中
+   * @param img
+   * @param rect
+   * @returns {Image}
+   */
+  cropImage(img, rect) {
+    const draw = new DrawContext();
+    draw.size = new Size(rect.width, rect.height);
+
+    draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y));
+    return draw.getImage();
+  }
+
+  /**
+   * 给图片加一层半透明遮罩
+   * @param {Image} img 要处理的图片
+   * @param {string} color 遮罩背景颜色
+   * @param {any} opacity 透明度
+   */
+  async shadowImage(img, color = '#000000', opacity = 0.7) {
+    let ctx = new DrawContext();
+    // 获取图片的尺寸
+    ctx.size = img.size;
+
+    ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']));
+    ctx.setFillColor(new Color(color, opacity));
+    ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']));
+
+    return await ctx.getImage();
+  }
+
+  /**
+   * 获取远程图片内容
+   * @param {string} url 图片地址
+   * @param {boolean} useCache 是否使用缓存（请求失败时获取本地缓存）
+   */
+  async getImageByUrl(url, useCache = true) {
+    const cacheKey = this.md5(url);
+    const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey);
+    // 判断是否有缓存
+    if (useCache && FileManager.local().fileExists(cacheFile)) {
+      // @ts-ignore
+      return Image.fromFile(cacheFile);
+    }
+    try {
+      const req = new Request(url);
+      // @ts-ignore
+      const img = await req.loadImage();
+      // 存储到缓存
+      FileManager.local().writeImage(cacheFile, img);
+      return img;
+    } catch (e) {
+      // 没有缓存+失败情况下，返回自定义的绘制图片（红色背景）
+      let ctx = new DrawContext();
+      ctx.size = new Size(100, 100);
+      ctx.setFillColor(Color.red());
+      ctx.fillRect(new Rect(0, 0, 100, 100));
+      return await ctx.getImage();
+    }
   }
 
   /**
@@ -562,54 +640,6 @@ class Base {
     // @ts-ignore
     callback(request.response, data);
     return data;
-  }
-
-  /**
-   * 给图片加一层半透明遮罩
-   * @param {Image} img 要处理的图片
-   * @param {string} color 遮罩背景颜色
-   * @param {any} opacity 透明度
-   */
-  async shadowImage(img, color = '#000000', opacity = 0.7) {
-    let ctx = new DrawContext();
-    // 获取图片的尺寸
-    ctx.size = img.size;
-
-    ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']));
-    ctx.setFillColor(new Color(color, opacity));
-    ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']));
-
-    return await ctx.getImage();
-  }
-
-  /**
-   * 获取远程图片内容
-   * @param {string} url 图片地址
-   * @param {boolean} useCache 是否使用缓存（请求失败时获取本地缓存）
-   */
-  async getImageByUrl(url, useCache = true) {
-    const cacheKey = this.md5(url);
-    const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey);
-    // 判断是否有缓存
-    if (useCache && FileManager.local().fileExists(cacheFile)) {
-      // @ts-ignore
-      return Image.fromFile(cacheFile);
-    }
-    try {
-      const req = new Request(url);
-      // @ts-ignore
-      const img = await req.loadImage();
-      // 存储到缓存
-      FileManager.local().writeImage(cacheFile, img);
-      return img;
-    } catch (e) {
-      // 没有缓存+失败情况下，返回自定义的绘制图片（红色背景）
-      let ctx = new DrawContext();
-      ctx.size = new Size(100, 100);
-      ctx.setFillColor(Color.red());
-      ctx.fillRect(new Rect(0, 0, 100, 100));
-      return await ctx.getImage();
-    }
   }
 
   /**
@@ -1039,6 +1069,15 @@ const Running = async (Widget, default_args = '') => {
   if (config.runsInWidget) {
     M = new Widget(args.widgetParameter || '');
     const W = await M.render();
+    try {
+      if (M.settings?.UserConfig?.refresh_interval) {
+        W.refreshAfterDate = new Date(
+          +new Date() + 1000 * 60 * parseInt(M.settings?.UserConfig?.refresh_interval || 5)
+        );
+      }
+    } catch (e) {
+      console.log(e);
+    }
     Script.setWidget(W);
     Script.complete();
   } else if (config.runsWithSiri) {
