@@ -66,7 +66,7 @@
 const FILE_MGR = FileManager[module.filename.includes('Documents/iCloud~') ? 'iCloud' : 'local']();
 await Promise.all(
     ['「小件件」长马出行.js'].map(async (js) => {
-        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/ftms/ftms.js');
+        const REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/mzd/mzd.js');
         const RES = await REQ.load();
         FILE_MGR.write(FILE_MGR.joinPath(FILE_MGR.documentsDirectory(), js), RES);
     })
@@ -99,15 +99,17 @@ Safari.open(
 
     <p style="color: orange"><b>注意：</b>车辆需开通长安马自达车联网，可获取相关车辆状况数据，否则无法使用，请知晓。</p>
     <p style="color: red">
-      <b
-        >提取密钥抓包教程：（由于官方限制，密钥不定时会过期，显示未授权，重新抓包导入数据，再刷新数据即可）</b
-      >
+      <b>提取密钥抓包教程：（由于官方限制，密钥不定时会过期，显示未授权，重新抓包导入数据，再刷新数据即可）</b>
     </p>
     <p style="color: red">
-      <b>APP抓包教程：<a target="_blank" href="https://docs.qq.com/doc/DZE9pdnZnV1dtbFVs">点击前往</a></b>
+      <b>APP抓包教程：<a target="_blank" href="https://docs.qq.com/doc/DZEJOWW5yZkdzaGhC">点击前往</a></b>
     </p>
 
-    <p style="color: orange"><b>友情提醒：</b>通过打赏开发者，可联系开发者协助获取相关抓包文件，也可自行前往抓包导入数据获取。开发不易，赏杯茶喝喝呦。联系方式：v： wangningkai</p>
+    <p style="color: orange">
+      <b>友情提醒：</b
+      >通过打赏开发者，可联系开发者协助获取相关抓包文件，也可自行前往抓包导入数据获取。开发不易，赏杯茶喝喝呦。联系方式：v：
+      wangningkai
+    </p>
 
     <h3 style="color: red">
       更多安装配置指南参考 <a target="_blank" href="https://scriptable.ningkai.wang">「小件件」汽车出行</a>
