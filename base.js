@@ -485,6 +485,32 @@ class Base {
     return result.toLowerCase();
   }
 
+  http_build_query(args) {
+    let keys = Object.keys(args);
+    keys = keys.sort();
+    let newArgs = {};
+    keys.forEach(function (key) {
+      if (args[key] != '' && args[key] != 'undefined') {
+        newArgs[key] = args[key];
+      }
+    });
+    let string = '';
+    for (let k in newArgs) {
+      string += '&' + k + '=' + newArgs[k];
+    }
+    string = string.substring(1);
+    return string;
+  }
+
+  randomChar(e) {
+    e = e || 16;
+    let t = 'ABCDEF0123456789',
+      a = t.length,
+      n = '';
+    for (let i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
+    return n;
+  }
+
   /**
    * Alert 弹窗封装
    * @param message
