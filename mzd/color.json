@@ -1,0 +1,22 @@
+{
+  "car": {
+    "昂克赛拉": {
+      "default": "https://s4.ax1x.com/2022/01/15/7G0qeJ.png"
+    },
+    "阿特兹": {
+      "default": "https://s4.ax1x.com/2022/01/15/7G0OoR.png"
+    },
+    "cx-30": {
+      "default": "https://s4.ax1x.com/2022/01/15/7GB9yD.png"
+    },
+    "cx-4": {
+      "default": "https://s4.ax1x.com/2022/01/15/7GBFwd.png"
+    },
+    "cx-5": {
+      "default": "https://s4.ax1x.com/2022/01/15/7GBKOg.png"
+    },
+    "cx-8": {
+      "default": "https://s4.ax1x.com/2022/01/15/7GB1Ts.png"
+    }
+  }
+}
