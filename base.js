@@ -56,11 +56,87 @@ class Base {
   }
 
   /**
-   * 判断系统外观模式
-   * @return {Promise<boolean>}
+   * 保存字符串到本地
+   * @param {string} cacheKey 缓存key
+   * @param {string} content 缓存内容
    */
-  async isUsingDarkAppearance() {
-    return !Color.dynamic(Color.white(), Color.black()).red;
+  saveStringCache(cacheKey, content) {
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
+    this.FILE_MGR_LOCAL.writeString(cacheFile, content);
+  }
+
+  /**
+   * 获取本地缓存字符串
+   * @param {string} cacheKey 缓存key
+   * @return {string} 本地字符串缓存
+   */
+  loadStringCache(cacheKey) {
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
+    const fileExists = this.FILE_MGR_LOCAL.fileExists(cacheFile);
+    let cacheString = '';
+    if (fileExists) {
+      cacheString = this.FILE_MGR_LOCAL.readString(cacheFile);
+    }
+    return cacheString;
+  }
+
+  /**
+   * 保存图片到本地
+   * @param {string} cacheKey 缓存key
+   * @param {Image} img 缓存图片
+   */
+  async saveImgCache(cacheKey, img) {
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
+    await this.FILE_MGR_LOCAL.writeImage(cacheFile, img);
+  }
+
+  /**
+   * 获取本地缓存图片
+   * @param {string} cacheKey 缓存key
+   * @return {Image} 本地图片缓存
+   */
+  loadImgCache(cacheKey) {
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
+    const fileExists = this.FILE_MGR_LOCAL.fileExists(cacheFile);
+    let img = undefined;
+    if (fileExists) {
+      img = this.FILE_MGR_LOCAL.readImage(cacheFile);
+    }
+    return img;
+  }
+
+  /**
+   * 获取缓存文件的上次修改时间
+   * @param {string} cacheKey 缓存key
+   * @return 返回上次缓存文件修改的时间戳(单位：秒)
+   */
+  getCacheModificationDate(cacheKey) {
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
+    const fileExists = this.FILE_MGR_LOCAL.fileExists(cacheFile);
+    if (fileExists) {
+      return this.FILE_MGR_LOCAL.modificationDate(cacheFile).getTime() / 1000;
+    } else {
+      return 0;
+    }
+  }
+
+  /**
+   * 删除本地缓存
+   * @param {string} cacheKey 缓存key
+   */
+  removeCache(cacheKey) {
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(FileManager.local().documentsDirectory(), cacheKey);
+    this.FILE_MGR_LOCAL.remove(cacheFile);
+  }
+
+  /**
+   * 删除本地缓存集合
+   * @param {array} cacheKeyList 缓存key
+   */
+  removeCaches(cacheKeyList) {
+    for (const cacheKey of cacheKeyList) {
+      this.removeCache(cacheKey);
+    }
   }
 
   /**
@@ -485,6 +561,11 @@ class Base {
     return result.toLowerCase();
   }
 
+  /**
+   * 请求参数排序组合
+   * @param {*} args
+   * @returns
+   */
   http_build_query(args) {
     let keys = Object.keys(args);
     keys = keys.sort();
@@ -502,6 +583,11 @@ class Base {
     return string;
   }
 
+  /**
+   * 16进制随机字符传
+   * @param {*} e
+   * @returns
+   */
   randomChar(e) {
     e = e || 16;
     let t = 'ABCDEF0123456789',
@@ -509,94 +595,6 @@ class Base {
       n = '';
     for (let i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
     return n;
-  }
-
-  /**
-   * Alert 弹窗封装
-   * @param message
-   * @param options
-   * @returns {Promise<number>}
-   */
-  async generateAlert(message, options) {
-    const alert = new Alert();
-    alert.message = message;
-    for (const option of options) {
-      alert.addAction(option);
-    }
-    return await alert.presentAlert();
-  }
-
-  /**
-   * 缩放图片
-   * @param {*} imageSize
-   * @param {*} height
-   * @returns
-   */
-  scaleImage(imageSize, height) {
-    let scale = height / imageSize.height;
-    return new Size(scale * imageSize.width, height);
-  }
-
-  /**
-   * 将图像裁剪到指定的 rect 中
-   * @param img
-   * @param rect
-   * @returns {Image}
-   */
-  cropImage(img, rect) {
-    const draw = new DrawContext();
-    draw.size = new Size(rect.width, rect.height);
-
-    draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y));
-    return draw.getImage();
-  }
-
-  /**
-   * 给图片加一层半透明遮罩
-   * @param {Image} img 要处理的图片
-   * @param {string} color 遮罩背景颜色
-   * @param {any} opacity 透明度
-   */
-  async shadowImage(img, color = '#000000', opacity = 0.7) {
-    let ctx = new DrawContext();
-    // 获取图片的尺寸
-    ctx.size = img.size;
-
-    ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']));
-    ctx.setFillColor(new Color(color, opacity));
-    ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']));
-
-    return await ctx.getImage();
-  }
-
-  /**
-   * 获取远程图片内容
-   * @param {string} url 图片地址
-   * @param {boolean} useCache 是否使用缓存（请求失败时获取本地缓存）
-   */
-  async getImageByUrl(url, useCache = true) {
-    const cacheKey = this.md5(url);
-    const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey);
-    // 判断是否有缓存
-    if (useCache && FileManager.local().fileExists(cacheFile)) {
-      // @ts-ignore
-      return Image.fromFile(cacheFile);
-    }
-    try {
-      const req = new Request(url);
-      // @ts-ignore
-      const img = await req.loadImage();
-      // 存储到缓存
-      FileManager.local().writeImage(cacheFile, img);
-      return img;
-    } catch (e) {
-      // 没有缓存+失败情况下，返回自定义的绘制图片（红色背景）
-      let ctx = new DrawContext();
-      ctx.size = new Size(100, 100);
-      ctx.setFillColor(Color.red());
-      ctx.fillRect(new Rect(0, 0, 100, 100));
-      return await ctx.getImage();
-    }
   }
 
   /**
@@ -639,6 +637,213 @@ class Base {
     let dateStr = dateFormatter.string(date);
 
     return dateStr;
+  }
+
+  /**
+   * 手机分辨率
+   * @returns Object
+   */
+  phoneSizes() {
+    return {
+      // 12 Pro Max
+      2778: {
+        small: 510,
+        medium: 1092,
+        large: 1146,
+        left: 96,
+        right: 678,
+        top: 246,
+        middle: 882,
+        bottom: 1518
+      },
+
+      // 12 and 12 Pro
+      2532: {
+        small: 474,
+        medium: 1014,
+        large: 1062,
+        left: 78,
+        right: 618,
+        top: 231,
+        middle: 819,
+        bottom: 1407
+      },
+
+      // 11 Pro Max, XS Max
+      2688: {
+        small: 507,
+        medium: 1080,
+        large: 1137,
+        left: 81,
+        right: 654,
+        top: 228,
+        middle: 858,
+        bottom: 1488
+      },
+
+      // 11, XR
+      1792: {
+        small: 338,
+        medium: 720,
+        large: 758,
+        left: 54,
+        right: 436,
+        top: 160,
+        middle: 580,
+        bottom: 1000
+      },
+
+      // 11 Pro, XS, X, 12 mini
+      2436: {
+        x: {
+          small: 465,
+          medium: 987,
+          large: 1035,
+          left: 69,
+          right: 591,
+          top: 213,
+          middle: 783,
+          bottom: 1353
+        },
+
+        mini: {
+          small: 465,
+          medium: 987,
+          large: 1035,
+          left: 69,
+          right: 591,
+          top: 231,
+          middle: 801,
+          bottom: 1371
+        }
+      },
+
+      // Plus phones
+      2208: {
+        small: 471,
+        medium: 1044,
+        large: 1071,
+        left: 99,
+        right: 672,
+        top: 114,
+        middle: 696,
+        bottom: 1278
+      },
+
+      // SE2 and 6/6S/7/8
+      1334: {
+        small: 296,
+        medium: 642,
+        large: 648,
+        left: 54,
+        right: 400,
+        top: 60,
+        middle: 412,
+        bottom: 764
+      },
+
+      // SE1
+      1136: {
+        small: 282,
+        medium: 584,
+        large: 622,
+        left: 30,
+        right: 332,
+        top: 59,
+        middle: 399,
+        bottom: 399
+      },
+
+      // 11 and XR in Display Zoom mode
+      1624: {
+        small: 310,
+        medium: 658,
+        large: 690,
+        left: 46,
+        right: 394,
+        top: 142,
+        middle: 522,
+        bottom: 902
+      },
+
+      // Plus in Display Zoom mode
+      2001: {
+        small: 444,
+        medium: 963,
+        large: 972,
+        left: 81,
+        right: 600,
+        top: 90,
+        middle: 618,
+        bottom: 1146
+      }
+    };
+  }
+
+  /**
+   * @description Provide a font based on the input.
+   * @param {*} fontName
+   * @param {*} fontSize
+   */
+  provideFont(fontName, fontSize) {
+    const fontGenerator = {
+      ultralight: () => {
+        return Font.ultraLightSystemFont(fontSize);
+      },
+      light: () => {
+        return Font.lightSystemFont(fontSize);
+      },
+      regular: () => {
+        return Font.regularSystemFont(fontSize);
+      },
+      medium: () => {
+        return Font.mediumSystemFont(fontSize);
+      },
+      semibold: () => {
+        return Font.semiboldSystemFont(fontSize);
+      },
+      bold: () => {
+        return Font.boldSystemFont(fontSize);
+      },
+      heavy: () => {
+        return Font.heavySystemFont(fontSize);
+      },
+      black: () => {
+        return Font.blackSystemFont(fontSize);
+      },
+      italic: () => {
+        return Font.italicSystemFont(fontSize);
+      }
+    };
+
+    const systemFont = fontGenerator[fontName];
+    if (systemFont) {
+      return systemFont();
+    }
+    return new Font(fontName, fontSize);
+  }
+
+  /**
+   * 判断系统外观模式
+   * @return {Promise<boolean>}
+   */
+  async isUsingDarkAppearance() {
+    return !Color.dynamic(Color.white(), Color.black()).red;
+  }
+
+  /**
+   * Alert 弹窗封装
+   * @param message
+   * @param options
+   * @returns {Promise<number>}
+   */
+  async generateAlert(message, options) {
+    const alert = new Alert();
+    alert.message = message;
+    for (const option of options) {
+      alert.addAction(option);
+    }
+    return await alert.presentAlert();
   }
 
   /**
@@ -808,6 +1013,12 @@ class Base {
     }
   }
 
+  /**
+   * 坐标转换
+   * @param {*} lng
+   * @param {*} lat
+   * @returns
+   */
   transformlat(lng, lat) {
     const PI = 3.1415926535897932384626;
     let ret = -100.0 + 2.0 * lng + 3.0 * lat + 0.2 * lat * lat + 0.1 * lng * lat + 0.2 * Math.sqrt(Math.abs(lng));
@@ -817,6 +1028,12 @@ class Base {
     return ret;
   }
 
+  /**
+   * 坐标转换
+   * @param {*} lng
+   * @param {*} lat
+   * @returns
+   */
   transformlng(lng, lat) {
     const PI = 3.1415926535897932384626;
     let ret = 300.0 + lng + 2.0 * lat + 0.1 * lng * lng + 0.1 * lng * lat + 0.1 * Math.sqrt(Math.abs(lng));
@@ -836,6 +1053,84 @@ class Base {
     return lng < 72.004 || lng > 137.8347 || lat < 0.8293 || lat > 55.8271 || false;
   }
 
+  /**
+   * 缩放图片
+   * @param {*} imageSize
+   * @param {*} height
+   * @returns
+   */
+  scaleImage(imageSize, height) {
+    let scale = height / imageSize.height;
+    return new Size(scale * imageSize.width, height);
+  }
+
+  /**
+   * 将图像裁剪到指定的 rect 中
+   * @param img
+   * @param rect
+   * @returns {Image}
+   */
+  cropImage(img, rect) {
+    const draw = new DrawContext();
+    draw.size = new Size(rect.width, rect.height);
+
+    draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y));
+    return draw.getImage();
+  }
+
+  /**
+   * 给图片加一层半透明遮罩
+   * @param {Image} img 要处理的图片
+   * @param {string} color 遮罩背景颜色
+   * @param {any} opacity 透明度
+   */
+  async shadowImage(img, color = '#000000', opacity = 0.7) {
+    let ctx = new DrawContext();
+    // 获取图片的尺寸
+    ctx.size = img.size;
+
+    ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']));
+    ctx.setFillColor(new Color(color, opacity));
+    ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']));
+
+    return await ctx.getImage();
+  }
+
+  /**
+   * 获取远程图片内容
+   * @param {string} url 图片地址
+   * @param {boolean} useCache 是否使用缓存（请求失败时获取本地缓存）
+   */
+  async getImageByUrl(url, useCache = true) {
+    const cacheKey = this.md5(url);
+    const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey);
+    // 判断是否有缓存
+    if (useCache && FileManager.local().fileExists(cacheFile)) {
+      // @ts-ignore
+      return Image.fromFile(cacheFile);
+    }
+    try {
+      const req = new Request(url);
+      // @ts-ignore
+      const img = await req.loadImage();
+      // 存储到缓存
+      FileManager.local().writeImage(cacheFile, img);
+      return img;
+    } catch (e) {
+      // 没有缓存+失败情况下，返回自定义的绘制图片（红色背景）
+      let ctx = new DrawContext();
+      ctx.size = new Size(100, 100);
+      ctx.setFillColor(Color.red());
+      ctx.fillRect(new Rect(0, 0, 100, 100));
+      return await ctx.getImage();
+    }
+  }
+  /**
+   * 图片模糊化处理
+   * @param {*} img
+   * @param {*} style
+   * @returns
+   */
   async blurImage(img, style) {
     const blur = 150;
     const js = `
@@ -1011,6 +1306,11 @@ var mul_table=[512,512,456,512,328,456,335,512,405,328,271,456,388,335,292,512,4
     return imageFromData;
   }
 
+  /**
+   * 图片反转色
+   * @param {*} img
+   * @returns
+   */
   async reverseImage(img) {
     const js = `
         function getXY(obj, x, y) {
@@ -1423,7 +1723,7 @@ module.exports = {
 // 3. 下载保存，存储sha
 // 4. 更新时间为每分一次
 //
-const RUNTIME_VERSION = '2022011701';
+const RUNTIME_VERSION = '2022011801';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
