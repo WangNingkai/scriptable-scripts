@@ -1385,6 +1385,77 @@ var mul_table=[512,512,456,512,328,456,335,512,405,328,271,456,388,335,292,512,4
     // return cropImage(imageFromData)
     return imageFromData;
   }
+
+  /**
+   * 创建进度条
+   * @param {*} percent
+   * @param {*} length
+   * @param {*} hight
+   * @returns
+   */
+  drawProgress(percent, left_color = 'ffd60a', used_color = '48484b', length, hight = 5) {
+    const context = new DrawContext();
+    context.size = new Size(length, hight);
+    context.opaque = false;
+    context.respectScreenScale = true;
+    context.setFillColor(new Color(used_color, 1));
+    const path = new Path();
+    path.addRoundedRect(new Rect(0, 0, length, hight), 3, 2);
+    context.addPath(path);
+    context.fillPath();
+    context.setFillColor(new Color(left_color, 1));
+    const path1 = new Path();
+    path1.addRoundedRect(new Rect(0, 0, (length * percent * 100) / 100, hight), 3, 2);
+    context.addPath(path1);
+    context.fillPath();
+    return context.getImage();
+  }
+
+  /**
+   * 创建圆圈进度条
+   * @param {number} percent
+   * @param {*} fillColor
+   * @param {*} strokeColor
+   * @param {*} gradient
+   * @returns
+   */
+  drawArc(percent, fillColor, strokeColor, size, height, gradient = false) {
+    // @ts-ignore
+    const deg = (100 - percent * 100).toFixed(2) * 3.6;
+    const sinDeg = (deg) => {
+      return Math.sin((deg * Math.PI) / 180);
+    };
+
+    const cosDeg = (deg) => {
+      return Math.cos((deg * Math.PI) / 180);
+    };
+    let canvSize = size,
+      canvWidth = height,
+      canvRadius = 80;
+    const canvas = new DrawContext();
+    canvas.opaque = false;
+    canvas.respectScreenScale = true;
+    canvas.size = new Size(canvSize, canvSize);
+    let ctr = new Point(canvSize / 2, canvSize / 2);
+    let bgx = ctr.x - canvRadius;
+    let bgy = ctr.y - canvRadius;
+    let bgd = 2 * canvRadius;
+    let bgr = new Rect(bgx, bgy, bgd, bgd);
+
+    canvas.setStrokeColor(new Color(strokeColor, 1));
+    canvas.setLineWidth(canvWidth);
+    canvas.strokeEllipse(bgr);
+
+    for (let t = 0; t < deg; t++) {
+      let rect_x = ctr.x + canvRadius * sinDeg(t) - canvWidth / 2;
+      let rect_y = ctr.y - canvRadius * cosDeg(t) - canvWidth / 2;
+      let rect_r = new Rect(rect_x, rect_y, canvWidth, canvWidth);
+      canvas.setFillColor(gradient ? new Color(fillColor[t], 1) : new Color(fillColor, 1));
+      canvas.setStrokeColor(new Color(strokeColor, 1));
+      canvas.fillEllipse(rect_r);
+    }
+    return canvas.getImage();
+  }
 }
 // @base.end
 // 运行环境
@@ -1723,7 +1794,7 @@ module.exports = {
 // 3. 下载保存，存储sha
 // 4. 更新时间为每分一次
 //
-const RUNTIME_VERSION = '2022011801';
+const RUNTIME_VERSION = '2022011802';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
