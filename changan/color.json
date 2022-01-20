@@ -1,0 +1,34 @@
+{
+  "car": {
+    "uni-v": {
+      "default": "https://www.changan.com.cn/uploads/car_model_photo/3417a8ee651f16dfd6ec74dce7515fb5.png"
+    },
+    "uni-k": {
+      "default": "https://www.changan.com.cn/uploads/car_model_photo/b20a0969eacd58fd2c045b08069adfa5.png"
+    },
+    "uni-t": {
+      "default": "https://www.changan.com.cn/uploads/car_model_photo/d8b08ce09d8a43b00343b50076c4a13a.png"
+    },
+    "raeton": {
+      "default": "https://www.changan.com.cn/car/raeton_ccblue/images/car-car1.png"
+    },
+    "eado": {
+      "default": "https://www.changan.com.cn/car/eado-plus/images/car-car1.png"
+    },
+    "cs95": {
+      "default": "https://www.changan.com.cn/car/cs95-2019/images/car-car2.png"
+    },
+    "cs85": {
+      "default": "https://www.changan.com.cn/car/cs85/images/car-car2.png"
+    },
+    "cs75": {
+      "default": "https://www.changan.com.cn/car/cs75plus/images/car-car1.png"
+    },
+    "cs55": {
+      "default": "https://www.changan.com.cn/car/cs55/images/car-car5.png"
+    },
+    "cs35": {
+      "default": "https://www.changan.com.cn/car/cs35plus/images/car-car1.png"
+    }
+  }
+}
