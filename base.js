@@ -1079,6 +1079,17 @@ class Base {
   }
 
   /**
+   * 加载base64图片
+   * @param {*} base64Data
+   * @returns
+   */
+  async loadBase64Image(base64Data) {
+    let imageData = Data.fromBase64String(base64Data);
+
+    return Image.fromData(imageData);
+  }
+
+  /**
    * 给图片加一层半透明遮罩
    * @param {Image} img 要处理的图片
    * @param {string} color 遮罩背景颜色
@@ -1794,7 +1805,7 @@ module.exports = {
 // 3. 下载保存，存储sha
 // 4. 更新时间为每分一次
 //
-const RUNTIME_VERSION = '2022011802';
+const RUNTIME_VERSION = '2022012001';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
