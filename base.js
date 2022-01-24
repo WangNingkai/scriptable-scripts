@@ -162,7 +162,7 @@ class Base {
    * @param string
    * @returns {string}
    */
-  md5(string) {
+  md5(string, str2utf8 = false) {
     const safeAdd = (x, y) => {
       let lsw = (x & 0xffff) + (y & 0xffff);
       return (((x >> 16) + (y >> 16) + (lsw >> 16)) << 16) | (lsw & 0xffff);
@@ -314,7 +314,7 @@ class Base {
           (c) => String.fromCharCode(0xe0 | (cc(c) >> 12), 0x80 | ((cc(c) >> 6) & 0x3f), 0x80 | (cc(c) & 0x3f))
         );
     };
-    const rawMD5 = (s) => rstrMD5(str2rstrUTF8(s));
+    const rawMD5 = (s) => rstrMD5(str2utf8 ? str2rstrUTF8(s) : s);
     const hexMD5 = (s) => rstr2hex(rawMD5(s));
     return hexMD5(string);
   }
@@ -1557,7 +1557,13 @@ module.exports = {
   Running
 };
 // 自更新
-const RUNTIME_VERSION = '2022012402';
+// 流程：
+// 1. 获取远程gitee仓库的本文件代码
+// 2. 对比sha，如果和本地存储的不一致，则下载
+// 3. 下载保存，存储sha
+// 4. 更新时间为每分一次
+//
+const RUNTIME_VERSION = '2022012403';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
