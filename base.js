@@ -546,22 +546,31 @@ class Base {
   provideFont(fontName, fontSize) {
     const fontGenerator = {
       ultralight: () => {
-        return new Font('PingFangSC-Ultralight', fontSize);
+        return Font.ultraLightSystemFont(fontSize);
       },
       light: () => {
-        return new Font('PingFangSC-Light', fontSize);
+        return Font.lightSystemFont(fontSize);
       },
       regular: () => {
-        return new Font('PingFangSC-Regular', fontSize);
+        return Font.regularSystemFont(fontSize);
       },
       medium: () => {
-        return new Font('PingFangSC-Meduim', fontSize);
+        return Font.mediumSystemFont(fontSize);
       },
       semibold: () => {
-        return new Font('PingFangSC-Semibold', fontSize);
+        return Font.semiboldSystemFont(fontSize);
       },
-      thin: () => {
-        return new Font('PingFangSC-THin', fontSize);
+      bold: () => {
+        return Font.boldSystemFont(fontSize);
+      },
+      heavy: () => {
+        return Font.heavySystemFont(fontSize);
+      },
+      black: () => {
+        return Font.blackSystemFont(fontSize);
+      },
+      italic: () => {
+        return Font.italicSystemFont(fontSize);
       }
     };
 
@@ -1548,13 +1557,7 @@ module.exports = {
   Running
 };
 // 自更新
-// 流程：
-// 1. 获取远程gitee仓库的本文件代码
-// 2. 对比sha，如果和本地存储的不一致，则下载
-// 3. 下载保存，存储sha
-// 4. 更新时间为每分一次
-//
-const RUNTIME_VERSION = '2022012401';
+const RUNTIME_VERSION = '2022012402';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
