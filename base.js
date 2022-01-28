@@ -7,7 +7,11 @@ class Base {
   constructor(arg = '') {
     this.arg = arg;
     this._actions = {};
-    this.init();
+    try {
+      this.init();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   init(widgetFamily = config.widgetFamily) {
@@ -85,9 +89,9 @@ class Base {
    * @param {string} cacheKey 缓存key
    * @param {Image} img 缓存图片
    */
-  async saveImgCache(cacheKey, img) {
+  saveImgCache(cacheKey, img) {
     const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
-    await this.FILE_MGR_LOCAL.writeImage(cacheFile, img);
+    this.FILE_MGR_LOCAL.writeImage(cacheFile, img);
   }
 
   /**
@@ -125,8 +129,10 @@ class Base {
    * @param {string} cacheKey 缓存key
    */
   removeCache(cacheKey) {
-    const cacheFile = this.FILE_MGR_LOCAL.joinPath(FileManager.local().documentsDirectory(), cacheKey);
-    this.FILE_MGR_LOCAL.remove(cacheFile);
+    const cacheFile = this.FILE_MGR_LOCAL.joinPath(this.FILE_MGR_LOCAL.documentsDirectory(), cacheKey);
+    if (this.FILE_MGR_LOCAL.fileExists(cacheFile)) {
+      this.FILE_MGR_LOCAL.remove(cacheFile);
+    }
   }
 
   /**
@@ -356,6 +362,28 @@ class Base {
   }
 
   /**
+   * 取数组随机字段
+   * @param {*} arr
+   * @param {*} count
+   * @returns
+   */
+  getRandomArrayElements(arr, count) {
+    let shuffled = arr.slice(0),
+      i = arr.length,
+      min = i - count,
+      temp,
+      index;
+    min = min > 0 ? min : 0;
+    while (i-- > min) {
+      index = Math.floor((i + 1) * Math.random());
+      temp = shuffled[index];
+      shuffled[index] = shuffled[i];
+      shuffled[i] = temp;
+    }
+    return shuffled.slice(min);
+  }
+
+  /**
    * 判断对象是否为空
    * @param {*} mixedVar
    * @returns
@@ -367,11 +395,11 @@ class Base {
     let len;
     const emptyValues = [undef, null, false, 0, '', '0'];
     for (i = 0, len = emptyValues.length; i < len; i++) {
-      if (mixedVar === emptyValues[i]) {
+      if (mixedVar == emptyValues[i]) {
         return true;
       }
     }
-    if (typeof mixedVar === 'object') {
+    if (typeof mixedVar == 'object') {
       for (key in mixedVar) {
         if (mixedVar.hasOwnProperty(key)) {
           return false;
@@ -395,6 +423,54 @@ class Base {
     let dateStr = dateFormatter.string(date);
 
     return dateStr;
+  }
+  /**
+   * 组件尺寸大小
+   * @returns
+   */
+  deviceSize() {
+    return {
+      '428x926': {
+        small: {width: 176, height: 176},
+        medium: {width: 374, height: 176},
+        large: {width: 374, height: 391}
+      },
+      '390x844': {
+        small: {width: 161, height: 161},
+        medium: {width: 342, height: 161},
+        large: {width: 342, height: 359}
+      },
+      '414x896': {
+        small: {width: 169, height: 169},
+        medium: {width: 360, height: 169},
+        large: {width: 360, height: 376}
+      },
+      '375x812': {
+        small: {width: 155, height: 155},
+        medium: {width: 329, height: 155},
+        large: {width: 329, height: 345}
+      },
+      '414x736': {
+        small: {width: 159, height: 159},
+        medium: {width: 348, height: 159},
+        large: {width: 348, height: 357}
+      },
+      '375x667': {
+        small: {width: 148, height: 148},
+        medium: {width: 322, height: 148},
+        large: {width: 322, height: 324}
+      },
+      '320x568': {
+        small: {width: 141, height: 141},
+        medium: {width: 291, height: 141},
+        large: {width: 291, height: 299}
+      },
+      '320x693': {
+        small: {width: 150, height: 150},
+        medium: {width: 299, height: 150},
+        large: {width: 299, height: 310}
+      }
+    };
   }
 
   /**
@@ -677,7 +753,7 @@ class Base {
    * @param {*} notify 是否通知提示
    */
   saveSettings(notify = true) {
-    let res = typeof this.settings === 'object' ? JSON.stringify(this.settings) : String(this.settings);
+    let res = typeof this.settings == 'object' ? JSON.stringify(this.settings) : String(this.settings);
     Keychain.set(this.SETTING_KEY, res);
     // @ts-ignore
     if (notify) this.notify('设置成功', '桌面组件稍后将自动刷新');
@@ -809,6 +885,100 @@ class Base {
    */
   out_of_china(lng, lat) {
     return lng < 72.004 || lng > 137.8347 || lat < 0.8293 || lat > 55.8271 || false;
+  }
+
+  /**
+   * 获取截图中的组件剪裁图
+   * 可用作透明背景
+   * 返回图片image对象
+   * 代码改自：https://gist.github.com/mzeryck/3a97ccd1e059b3afa3c6666d27a496c9
+   * @param {string} title 开始处理前提示用户截图的信息，可选（适合用在组件自定义透明背景时提示）
+   */
+  async getWidgetScreenShot(title = null) {
+    let message = title || '开始之前，请先前往桌面，截取空白界面的截图。然后回来继续';
+    let exitOptions = ['我已截图', '前去截图 >'];
+    let shouldExit = await this.generateAlert(message, exitOptions);
+    if (shouldExit) return;
+
+    // Get screenshot and determine phone size.
+    let img = await Photos.fromLibrary();
+    let height = img.size.height;
+    let phone = this.phoneSizes()[height];
+    if (!phone) {
+      message = '好像您选择的照片不是正确的截图，请先前往桌面';
+      await this.generateAlert(message, ['我已知晓']);
+      return;
+    }
+
+    // Extra setup needed for 2436-sized phones.
+    if (height == 2436) {
+      const files = this.FILE_MGR_LOCAL;
+      let cacheName = 'mz-phone-type';
+      let cachePath = files.joinPath(files.libraryDirectory(), cacheName);
+
+      // If we already cached the phone size, load it.
+      if (files.fileExists(cachePath)) {
+        let typeString = files.readString(cachePath);
+        phone = phone[typeString];
+        // Otherwise, prompt the user.
+      } else {
+        message = '您的📱型号是?';
+        let types = ['iPhone 12 mini', 'iPhone 11 Pro, XS, or X'];
+        let typeIndex = await this.generateAlert(message, types);
+        let type = typeIndex == 0 ? 'mini' : 'x';
+        phone = phone[type];
+        files.writeString(cachePath, type);
+      }
+    }
+
+    // Prompt for widget size and position.
+    message = '截图中要设置透明背景组件的尺寸类型是？';
+    let sizes = ['小尺寸', '中尺寸', '大尺寸'];
+    let size = await this.generateAlert(message, sizes);
+    let widgetSize = sizes[size];
+
+    message = '要设置透明背景的小组件在哪个位置？';
+    message +=
+      height == 1136 ? ' （备注：当前设备只支持两行小组件，所以下边选项中的「中间」和「底部」的选项是一致的）' : '';
+
+    // Determine image crop based on phone size.
+    let crop = {w: '', h: '', x: '', y: ''};
+    if (widgetSize == '小尺寸') {
+      crop.w = phone.small;
+      crop.h = phone.small;
+      let positions = ['左上角', '右上角', '中间左', '中间右', '左下角', '右下角'];
+      let _posotions = ['Top left', 'Top right', 'Middle left', 'Middle right', 'Bottom left', 'Bottom right'];
+      let position = await this.generateAlert(message, positions);
+
+      // Convert the two words into two keys for the phone size dictionary.
+      let keys = _posotions[position].toLowerCase().split(' ');
+      crop.y = phone[keys[0]];
+      crop.x = phone[keys[1]];
+    } else if (widgetSize == '中尺寸') {
+      crop.w = phone.medium;
+      crop.h = phone.small;
+
+      // Medium and large widgets have a fixed x-value.
+      crop.x = phone.left;
+      let positions = ['顶部', '中间', '底部'];
+      let _positions = ['Top', 'Middle', 'Bottom'];
+      let position = await this.generateAlert(message, positions);
+      let key = _positions[position].toLowerCase();
+      crop.y = phone[key];
+    } else if (widgetSize == '大尺寸') {
+      crop.w = phone.medium;
+      crop.h = phone.large;
+      crop.x = phone.left;
+      let positions = ['顶部', '底部'];
+      let position = await this.generateAlert(message, positions);
+
+      // Large widgets at the bottom have the "middle" y-value.
+      crop.y = position ? phone.middle : phone.top;
+    }
+
+    // Crop image and finalize the widget.
+    // @ts-ignore
+    return this.cropImage(img, new Rect(crop.x, crop.y, crop.w, crop.h));
   }
 
   /**
@@ -1257,7 +1427,7 @@ const Running = async (Widget, default_args = '') => {
         .map((_) => _[0].toUpperCase() + _.substr(1))
         .join('');
       let _act = `action${_tmp}`;
-      if (M[_act] && typeof M[_act] === 'function') {
+      if (M[_act] && typeof M[_act] == 'function') {
         const func = M[_act].bind(M);
         const data = await func();
         if (output) {
@@ -1299,7 +1469,7 @@ const Running = async (Widget, default_args = '') => {
       .map((_) => _[0].toUpperCase() + _.substr(1))
       .join('');
     let _act = `action${_tmp}`;
-    if (M[_act] && typeof M[_act] === 'function') {
+    if (M[_act] && typeof M[_act] == 'function') {
       const func = M[_act].bind(M);
       await func(data);
     }
@@ -1327,7 +1497,7 @@ const Testing = async (Widget, default_args = '') => {
         .map((_) => _[0].toUpperCase() + _.substr(1))
         .join('');
       let _act = `action${_tmp}`;
-      if (M[_act] && typeof M[_act] === 'function') {
+      if (M[_act] && typeof M[_act] == 'function') {
         const func = M[_act].bind(M);
         await func();
       }
@@ -1356,7 +1526,7 @@ const Testing = async (Widget, default_args = '') => {
           a.addAction('连接');
           a.addCancelAction('取消');
           const id = await a.presentAlert();
-          if (id === -1) return;
+          if (id == -1) return;
           const ip = a.textFieldValue(0);
           // 保存到本地
           Keychain.set('xjj_debug_server', ip);
@@ -1422,10 +1592,10 @@ const Testing = async (Widget, default_args = '') => {
               M.notify('停止调试', '与开发服务器的连接已终止');
               break;
             }
-            if (_res === 'stop') {
+            if (_res == 'stop') {
               console.log('[!] 停止同步');
               break;
-            } else if (_res === 'no') {
+            } else if (_res == 'no') {
               // console.log("[-] 没有更新内容")
             } else if (_res.length > 0) {
               M.notify('同步成功', '新文件已同步，大小：' + _res.length);
@@ -1450,7 +1620,7 @@ const Testing = async (Widget, default_args = '') => {
               FileManager.local().writeString(SELF_FILE, _res);
               // 执行预览
               let i = await _actions[1](true);
-              if (i === 4 + Object.keys(actions).length) break;
+              if (i == 4 + Object.keys(actions).length) break;
             }
           }
         },
@@ -1473,7 +1643,7 @@ const Testing = async (Widget, default_args = '') => {
             a.addDestructiveAction('停止调试');
           }
           let i = await a.presentSheet();
-          if (i === -1) return;
+          if (i == -1) return;
           let w;
           switch (i) {
             case 0:
@@ -1543,7 +1713,7 @@ const Testing = async (Widget, default_args = '') => {
       .map((_) => _[0].toUpperCase() + _.substr(1))
       .join('');
     let _act = `action${_tmp}`;
-    if (M[_act] && typeof M[_act] === 'function') {
+    if (M[_act] && typeof M[_act] == 'function') {
       const func = M[_act].bind(M);
       await func(data);
     }
@@ -1563,7 +1733,7 @@ module.exports = {
 // 3. 下载保存，存储sha
 // 4. 更新时间为每分一次
 //
-const RUNTIME_VERSION = '2022012403';
+const RUNTIME_VERSION = '2022012801';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
@@ -1578,7 +1748,7 @@ const RUNTIME_VERSION = '2022012403';
   const req = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/base.version.json');
   const res = await req.loadJSON();
   console.log(`[+] 远程开发环境版本：${res['BASE_VERSION']}`);
-  if (res['BASE_VERSION'] === RUNTIME_VERSION) return console.warn('[-] 远程版本一致，暂无更新');
+  if (res['BASE_VERSION'] == RUNTIME_VERSION) return console.warn('[-] 远程版本一致，暂无更新');
   console.log('[+] 开始更新开发环境..');
   const REMOTE_REQ = new Request('https://gitee.com/wangningkai/scriptable-scripts/raw/master/base.js');
   const REMOTE_RES = await REMOTE_REQ.load();
