@@ -1,5 +1,5 @@
 {
-  "WIDGET_VERSION": "v1.0.0",
-  "WIDGET_BUILD": "2022011401",
-  "CHANGELOG": "1.添加长安马自达"
+  "WIDGET_VERSION": "v1.0.1",
+  "WIDGET_BUILD": "2022021101",
+  "CHANGELOG": "1.修复导入异常问题"
 }
