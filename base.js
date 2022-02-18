@@ -59,6 +59,25 @@ class Base {
     return result;
   }
 
+  // 获取 boxJS 缓存
+  async getBoxjsCache(key = '', notify = true, prefix = 'boxjs.com') {
+    try {
+      let url = 'http://' + prefix + '/query/boxdata';
+      if (key) url = 'http://' + prefix + '/query/data/' + key;
+      const boxdata = await this.request({method: 'GET', url: url});
+      if (boxdata.val) return boxdata.val;
+      return boxdata.datas;
+    } catch (e) {
+      if (notify)
+        await this.notify(
+          `BoxJS 数据读取失败`,
+          '请检查 BoxJS 域名是否为代理复写的域名，如（boxjs.net 或 boxjs.com）。\n若没有配置 BoxJS 相关模块，请点击通知查看教程',
+          'https://chavyleung.gitbook.io/boxjs/awesome/videos'
+        );
+      return false;
+    }
+  }
+
   /**
    * 保存字符串到本地
    * @param {string} cacheKey 缓存key
@@ -1424,7 +1443,7 @@ const Running = async (Widget, default_args = '') => {
       M.init();
       let _tmp = act
         .split('-')
-        .map((_) => _[0].toUpperCase() + _.substr(1))
+        .map((_) => _[0].toUpperCase() + _.substring(1))
         .join('');
       let _act = `action${_tmp}`;
       if (M[_act] && typeof M[_act] == 'function') {
@@ -1466,7 +1485,7 @@ const Running = async (Widget, default_args = '') => {
     }
     let _tmp = act
       .split('-')
-      .map((_) => _[0].toUpperCase() + _.substr(1))
+      .map((_) => _[0].toUpperCase() + _.substring(1))
       .join('');
     let _act = `action${_tmp}`;
     if (M[_act] && typeof M[_act] == 'function') {
@@ -1494,7 +1513,7 @@ const Testing = async (Widget, default_args = '') => {
       M.init();
       let _tmp = act
         .split('-')
-        .map((_) => _[0].toUpperCase() + _.substr(1))
+        .map((_) => _[0].toUpperCase() + _.substring(1))
         .join('');
       let _act = `action${_tmp}`;
       if (M[_act] && typeof M[_act] == 'function') {
@@ -1710,7 +1729,7 @@ const Testing = async (Widget, default_args = '') => {
     }
     let _tmp = act
       .split('-')
-      .map((_) => _[0].toUpperCase() + _.substr(1))
+      .map((_) => _[0].toUpperCase() + _.substring(1))
       .join('');
     let _act = `action${_tmp}`;
     if (M[_act] && typeof M[_act] == 'function') {
@@ -1733,7 +1752,7 @@ module.exports = {
 // 3. 下载保存，存储sha
 // 4. 更新时间为每分一次
 //
-const RUNTIME_VERSION = '2022012801';
+const RUNTIME_VERSION = '2022021801';
 (async () => {
   const UPDATE_KEY = 'BASE_UPDATE_AT';
   let UPDATED_AT = 0;
